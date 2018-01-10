@@ -70,7 +70,10 @@ class SongController extends Controller
    * @return Response
    */
   public function show($id) {
-      $song = Song::findOrFail($id);
+      $song = Song::find($id);
+      if($song == null) {
+        return redirect()->action('SongController@index');
+      }
       $user = User::where('id', '=', $song->user_id)->get();
       return view('songs.show', ['song' => $song, 'user' => $user]);
   }
@@ -83,7 +86,10 @@ class SongController extends Controller
    */
   public function edit($id) {
       // get the song
-      $song = Song::findOrFail( $id );
+      $song = Song::find( $id );
+      if($song == null) {
+        return redirect()->action('SongController@index');
+      }
       // show the edit form and pass the song
       return view('songs.edit', ['song' => $song]);
   }
@@ -97,7 +103,11 @@ class SongController extends Controller
   public function update(Request $request, $id)
   {
       // store
-      $song = Song::findOrFail($id);
+      $song = Song::find($id);
+      if($song == null) {
+        return redirect()->action('SongController@index');
+      }
+
       $song->name         = $request->input('name');
       $song->description  = $request->input('description');
       $song->image        = $request->input('image');
@@ -126,7 +136,9 @@ class SongController extends Controller
   public function destroy($id)
   {
       $song = Song::find($id);
-      $song->delete();
+      if($song != null) {
+        $song->delete();
+      }
       return redirect()->action('SongController@index');
   }
 }
