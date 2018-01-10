@@ -53,11 +53,6 @@ class SongController extends Controller
     $song->released_at  = null;
     // default values on create song
     $song->plays       = 0;
-    // TODO: default values for delete
-    $song->p-line       = null;
-    $song->c-line       = null;
-    // TODO: difference with audio????
-    $song->record       = null;
 
     // associate with user
     $id = Auth::user()->id;
@@ -112,11 +107,6 @@ class SongController extends Controller
       $song->released_at  = null;
       // default values on create song
       $song->plays       = 0;
-      // TODO: default values for delete
-      $song->p-line       = null;
-      $song->c-line       = null;
-      // TODO: difference with audio????
-      $song->record       = null;
 
       // associate with user
       $id = Auth::user()->id;
