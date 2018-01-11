@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Authenticated users middleware
+Route::group(['middleware' => 'auth'], function() {
+  Route::get('user/{id}', 'UserController@getUserProfile');
+});

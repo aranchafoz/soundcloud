@@ -1,0 +1,88 @@
+.image-banner {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  height: 350px;
+  width: 100%;
+  z-index: 2;
+  opacity: 1;
+  transition: opacity .3s;
+}
+
+.nav-tabs > li.active > a {
+  border-color: #ffffff;
+  border-bottom: 2px solid #f50;
+  color: #f50;
+  cursor: default;
+}
+
+.nav-tabs > li.active > a:hover {
+  border-color: #ffffff;
+  border-bottom: 2px solid #f50;
+  color: #f50;
+  cursor: default;
+}
+
+.nav-tabs > li.active > a:focus {
+  border-color: #ffffff;
+  border-bottom: 2px solid #f50;
+  color: #f50;
+  cursor: default;
+}
+
+.nav-tabs > li > a {
+  color: black;
+  text-decoration: bold;
+  border: 0;
+}
+
+.nav-tabs > li > a:hover {
+  border-color: black;
+  border-bottom: 2px solid black;
+  background-color: #ffffff;
+  outline: 0;
+}
+
+.profile-image-row {
+  height: 100%;
+}
+
+.profile-header {
+  height: 350px;
+}
+
+.user-profile-name {
+  color: #fff;
+  font-size: 24px;
+  line-height: 37px;
+  padding: 4px 7px;
+  background-color: rgba(0,0,0,.8);
+  display: inline-block;
+  margin-top: 70px;
+}
+
+.profile-image-container {
+  display: inline-flex;
+  height: 100%;
+}
+
+.profile-image {
+  border-radius: 50%;
+  margin: auto;
+}
+
+.upload-landphoto {
+  margin-top: 30px;
+}
+
+.upload-profile-photo {
+  margin: auto;
+  bottom: 0;
+  position: absolute;
+  vertical-align: middle;
+  margin-bottom: 100px;
+}
+
+#background-default {
+  background: rgba(0, 0, 0, 0) linear-gradient(315deg, rgb(159, 93, 86) 0%, rgb(63, 40, 38) 100%) repeat scroll 0% 0%;
+}
