@@ -34,8 +34,8 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
     {!! Html::script('assets/js/popper.min.js') !!}
     {!! Html::script('assets/js/bootstrap.min.js') !!}
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
