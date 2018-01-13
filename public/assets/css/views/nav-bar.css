@@ -1,0 +1,51 @@
+.navbar-default .navbar-nav > li > a {
+  color: #ccc;
+}
+
+.dropdown-menu > li > a > p {
+  color: #ccc;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #fff;
+}
+
+#navbar {
+  background: #333;
+  border-bottom: 0;
+}
+
+#navbar-brand {
+  display: inline-flex;
+  background: linear-gradient(#f70,#f30);
+}
+
+#brand-name {
+  color: #fff;
+}
+
+#inicio {
+  background: rgb(0, 0, 0);
+  width: 100px;
+  text-align: center;
+}
+
+#coleccion {
+  border-color: rgb(0, 0, 0);
+  border-width: 0 1px;
+  border-style: solid;
+  width: 100px;
+  text-align: center;
+}
+
+.myNavbar-icon {
+  height: 46px;
+  width: 40px;
+  margin: 2px;
+}
+
+.myNavbar-icon > a {
+  width: 100%;
+  width: 40px;
+  height: 100%;
+}

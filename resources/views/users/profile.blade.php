@@ -1,4 +1,10 @@
 @extends('layouts.app')
+
+@section('styles')
+    @parent
+    <link href="{{ asset('assets/css/views/profile.css') }}" rel="stylesheet">
+@stop
+
 @section('content')
 <div class="container">
   {{-- Profile header --}}
@@ -87,4 +93,4 @@
     </div>
   </div>
 </div>
-@endsection
+@stop
