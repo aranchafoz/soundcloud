@@ -1,5 +1,5 @@
 <nav id="navbar" class="navbar navbar-default navbar-static-top">
-  <div class="container">
+  <div id="myNavbar-container" class="container">
 
     <div class="navbar-header">
       <!-- Collapsed Hamburger -->
@@ -31,50 +31,100 @@
             <li id="coleccion"><a>Colección</a></li>
         @endguest
       </ul>
-
+      <ul class="nav navbar-nav navbar-middle">
+        <form class="navbar-form navbar-left">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Buscar artistas, grupos y pistas">
+            <span class="input-group-btn span-btn-search">
+              <button class="btn btn-default" type="button">
+                <img src="https://a-v2.sndcdn.com/assets/images/header/search-dbfe5cb.svg"  />
+              </button>
+            </span>
+          </div>
+        </form>
+      </ul>
       <!-- Right Side Of Navbar -->
       <ul class="nav navbar-nav navbar-right">
         <!-- Authentication Links -->
         @guest
-            <li id="login"><a href="{{ route('login') }}">Inicia sesión</a></li>
-            <li id="register"><a href="{{ route('register') }}">Crea tu cuenta</a></li>
-            <li id="subir-guest"><a>Subir</a></li>
+            <li id="login" class="myNavbar-items">
+              <a href="{{ route('login') }}">Inicia sesión</a>
+            </li>
+            <li id="register" class="myNavbar-items">
+              <a href="{{ route('register') }}">Crea tu cuenta</a>
+            </li>
+            <li id="subir-guest" class="myNavbar-items">
+              <a>Subir</a>
+            </li>
         @else
-            <li id="hazte-pro"><a>Hazte Pro</a></li>
-            <li id="subir"><a>Subir</a></li>
+            <li id="hazte-pro" class="myNavbar-items">
+              <a href="https://soundcloud.com/pro?ref=t099">Hazte Pro</a>
+            </li>
+            <li id="subir" class="myNavbar-items">
+              <a>Subir</a>
+            </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                     {{ Auth::user()->name }}
-                    <span class="caret"></span>
+                    &nbsp;
+                    <img src="https://a-v2.sndcdn.com/assets/images/header/dropdown-cf3420a.svg"  />
                 </a>
                 <ul class="dropdown-menu" role="menu">
                     <li>
                         <a href="/user/{{ Auth::user()->id}}">
-                            <p class="text-primary"> Profile </p>
+                          <img src="https://a-v2.sndcdn.com/assets/images/header/profile/user-853e629.svg" alt="Perfil"  />
+                          &nbsp;
+                          Perfil
                         </a>
                     </li>
+                    <li role="separator" class="divider"></li>
                     <li>
-                        <a href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
-                            <p class="text-primary"> Logout </p>
+                        <a href="/user/{{ Auth::user()->id}}/songs">
+                          <img src="https://a-v2.sndcdn.com/assets/images/header/profile/track_manager_light-e8f84d9.png" alt="Perfil"  />
+                          &nbsp;
+                          Pistas
                         </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
                     </li>
                 </ul>
             </li>
-            <li class="myNavbar-icon">
-              <a style="background: url({{URL::asset('images/notifications-20.png')}}) 50% 50% no-repeat;"></a>
+            <br id="myButtons-separator" />
+            <li id="notificaciones" class="myNavbar-icon myNavbar-items">
+              <img src="https://a-v2.sndcdn.com/assets/images/header/activities-66caaa5.svg" alt="Notificaciones" />
+
             </li>
-            <li class="myNavbar-icon">
-              <a style="background: url({{URL::asset('images/messages-20.png')}}) 50% 50% no-repeat;"></a>
+            <li id="mensajes" class="myNavbar-icon myNavbar-items">
+              <img src="https://a-v2.sndcdn.com/assets/images/header/messages-f517d0e.svg" alt="Mensajes" />
             </li>
         @endguest
-        <li class="myNavbar-icon">
-          <a style="background: url({{URL::asset('images/more-20.png')}}) 50% 50% no-repeat;"></a>
-        </li>
+          <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                <img src="https://a-v2.sndcdn.com/assets/images/header/more-0e9e752.svg" alt="More"  />
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                  <li>
+                      <a href="/developers">
+                        Quiénes somos
+                      </a>
+                  </li>
+                  <li role="separator" class="divider"></li>
+                  @guest
+                  <li>
+                    <a href="https://soundcloud.com/pro?ref=t099">Hazte Pro</a>
+                  </li>
+                  @else
+                  <li>
+                      <a href="{{ route('logout') }}"
+                          onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                          Cerrar sesión
+                      </a>
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                          {{ csrf_field() }}
+                      </form>
+                  </li>
+                  @endguest
+              </ul>
+          </li>
       </ul>
     </div>
   </div>

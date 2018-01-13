@@ -1,3 +1,6 @@
-@font-face {
-    src: url('{{ public_path('fonts/interstate/interstate-regular-comp-58b641cc0aca1.otf') }}');
+html {
+  min-width: 992px;
+  @font-face {
+      src: url('{{ public_path('fonts/interstate/interstate-regular-comp-58b641cc0aca1.otf') }}');
+  }
 }
