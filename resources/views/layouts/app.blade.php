@@ -16,6 +16,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
       <!-- Marter layout -->
     {!! Html::style('assets/css/bootstrap/bootstrap.css') !!}
     {!! Html::style('assets/css/views/nav-bar.css') !!}
@@ -38,7 +39,9 @@
     <div id="app">
         @include('nav-bar')
 
-        @yield('content')
+        <div id="myContent">
+          @yield('content')
+        </div>
     </div>
 
     <!-- Scripts -->

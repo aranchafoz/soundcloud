@@ -81,6 +81,12 @@
 }
 
 @media (min-width: 992px) {
+
+
+  #navbar {
+    margin-bottom: 0;
+  }
+
   .dropdown-menu {
     border: 0;
     padding: 0;
