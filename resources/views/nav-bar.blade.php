@@ -54,14 +54,14 @@
               <a href="{{ route('register') }}">Crea tu cuenta</a>
             </li>
             <li id="subir-guest" class="myNavbar-items">
-              <a>Subir</a>
+              <a href="{{ route('login') }}">Subir</a>
             </li>
         @else
             <li id="hazte-pro" class="myNavbar-items">
               <a href="https://soundcloud.com/pro?ref=t099">Hazte Pro</a>
             </li>
             <li id="subir" class="myNavbar-items">
-              <a>Subir</a>
+              <a href="/user/{{ Auth::user()->id}}/songs/subir">Subir</a>
             </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

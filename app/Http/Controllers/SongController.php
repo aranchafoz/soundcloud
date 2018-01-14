@@ -16,10 +16,10 @@ class SongController extends Controller
    *
    * @return Response
    */
-  public function index(Request $request)
+  public function getUserSongs($id, Request $request)
   {
     // get all the songs
-    $songs = Song::all();
+    $songs = Song::where('user_id', '=', $id)->get();
 
     // load the view and pass the songs
     return view('songs.index', ['songs' => $songs]);
@@ -30,10 +30,10 @@ class SongController extends Controller
    *
    * @return Response
    */
-  public function create()
+  public function getUserSongsUpload()
   {
       // load the create form (app/views/songs/create.blade.php)
-      return view('songs.create');
+      return view('songs.upload');
   }
 
   /**

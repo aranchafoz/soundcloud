@@ -1,0 +1,160 @@
+.main-upload {
+  margin: 90px auto 0;
+  padding: 0 60px;
+}
+
+.main-upload-container {
+  position: relative;
+  margin: 0 0 5px 0;
+  border-radius: 2px;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0 2px 12px -5px rgba(0,0,0,.1);
+  border: 1px solid #f2f2f2;
+}
+
+.main-upload-title {
+  margin-top: 0;
+  padding: 36px 0 0;
+  font-size: 24px;
+  line-height: 1;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-weight: 400;
+}
+
+.main-upload-chooser {
+  margin: 90px 0 210px;
+}
+
+.main-upload-chooser > button {
+  background-color: #f50;
+  border-color: #f50;
+  color: #fff;
+  font-size: 16px;
+  line-height: 18px;
+  padding: 10px 15px;
+  min-height: 40px;
+  border-radius: 3px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-weight: 100;
+  text-align: center;
+}
+
+.main-upload-additional {
+  position: relative;
+  top: -170px;
+}
+
+.main-upload-additional > label {
+  display: inline-block;
+  line-height: 13px;
+  font-size: 12px;
+  font-weight: normal;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+
+}
+
+.main-upload-pro {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 15px 20px;
+  text-align: left;
+  border-top: 1px solid #f2f2f2;
+}
+
+.main-upload-pro-info {
+  font-size: 14px;
+  font-family: "Interstate", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 100;
+  display: inline-flex;
+  flex: 1;
+}
+
+.main-upload-pro-info > div {
+  margin: auto 0;
+}
+
+.main-upload-pro-info > div > span {
+  font-weight: 100;
+  color: #999;
+}
+
+.main-upload-pro-info > div > br {
+  display: none;
+}
+
+.main-upload-pro-button {
+  display: inline-flex;
+  margin: 0 0 0 7px;
+}
+
+.main-upload-pro-button > button {
+  min-width: 31px;
+  background-color: #f50;
+  border-color: #f50;
+  color: #fff;
+  height: auto;
+  font-size: 16px;
+  padding: 8px 20px;
+  border-radius: 3px;
+  line-height: 20px;
+  font-family: "Interstate", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
+}
+
+@media (min-width: 426px) and (max-width: 991px) {
+  .main-upload {
+    padding: 0 30px;
+  }
+
+  .main-upload-additional {
+    padding: 15px 20px;
+  }
+
+  .main-upload-pro-info {
+    text-align: left;
+    width: 70%;
+  }
+
+  .main-upload-pro-info > div > br {
+    display: unset;
+  }
+
+  .main-upload-pro-button {
+    float: right;
+    width: 30%;
+    margin: 2% 0;
+    display: block;
+  }
+}
+
+@media (max-width: 425px) {
+  .main-upload {
+    margin: 20px auto;
+    padding: 0 5px;
+  }
+
+  .main-upload-chooser {
+    padding: 0 20px;
+  }
+
+  .main-upload-additional {
+    padding: 15px 20px;
+  }
+
+  .main-upload-pro-info {
+    text-align: left;
+    width: 100%;
+  }
+
+  .main-upload-pro-info > div > br {
+    display: unset;
+  }
+
+  .main-upload-pro-button {
+    float: unset;
+    margin: 4% 0;
+    display: grid;
+  }
+}

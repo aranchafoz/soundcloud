@@ -1,8 +1,6 @@
 html {
   height: 100%;
-  @font-face {
-      src: url('{{ public_path('fonts/interstate/interstate-regular-comp-58b641cc0aca1.otf') }}');
-  }
+
 }
 
 body {
@@ -15,8 +13,12 @@ body {
 }
 
 #myContent {
-  margin: 0 27px 0 27px;
-  padding: 20px 20px 0 20px;
   background-color: #fff;
   height: -webkit-fill-available;
+}
+
+@media (min-width: 992px) {
+  #myContent {
+    margin: 0 27px 0 27px;
+  }
 }

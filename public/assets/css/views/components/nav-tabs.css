@@ -1,0 +1,63 @@
+.nav-tabs {
+    border-bottom: 1px solid #f2f2f2;
+    font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    margin: 0 -19px;
+}
+
+.nav-tabs > li {
+  margin: 0 15px -1px;
+}
+
+.nav-tabs > li.active > a {
+  border-width: 0 0 2px 0;
+  border-bottom: 2px solid #f50;
+  color: #f50;
+  cursor: default;
+  line-height: 3.4;
+  font-weight: 100;
+}
+
+.nav-tabs > li.active > a:hover {
+  border-width: 0 0 1px 0;
+  border-bottom: 1px solid #f50;
+  color: #f50;
+  cursor: default;
+  line-height: 3.4;
+  font-weight: 100;
+}
+
+.nav-tabs > li.active > a:focus {
+  border-width: 0 0 1px 0;
+  border-bottom: 1px solid #f50;
+  color: #f50;
+  cursor: default;
+  line-height: 3.4;
+  font-weight: 100;
+}
+
+.nav-tabs > li > a {
+  color: #333;
+  border-width: 0 0 1px 0;
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
+  line-height: 3.4;
+  font-weight: 100;
+  padding: 0 6px;
+}
+
+.nav-tabs > li > a:hover {
+  border-bottom: 1px solid #333;
+  background-color: #ffffff;
+  outline: 0;
+  line-height: 3.4;
+  font-weight: 100;
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #creator-navigation-container {
+    width: 100%;
+  }
+}
