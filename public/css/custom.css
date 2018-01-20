@@ -15,10 +15,17 @@ body {
 #myContent {
   background-color: #fff;
   height: -webkit-fill-available;
+  margin: 0 auto;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   #myContent {
-    margin: 0 27px 0 27px;
+    width: 1170px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  #myContent {
+    width: 970px;
   }
 }

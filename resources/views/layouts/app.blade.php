@@ -47,6 +47,7 @@
     <!-- Scripts -->
     {!! Html::script('assets/js/popper.min.js') !!}
     {!! Html::script('assets/js/bootstrap.min.js') !!}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     @stack('scripts')
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
