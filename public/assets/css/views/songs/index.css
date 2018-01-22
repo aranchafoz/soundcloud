@@ -1,8 +1,52 @@
-#title {
+.header-ur-songs {
+  height: 155px;
+  margin-top: -1px;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.header-ur-songs > #title {
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
   font-weight: 400;
-  line-height: 1.3;  
+  line-height: 1.3;
   font-size: 32px;
   margin-top: 30px;
   margin-bottom: 34px;
+}
+
+.header-ur-songs-tools-selectAll {
+  float: left;
+  padding: 6px 15px;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 13px;
+}
+
+.header-ur-songs-tools-actions {
+  float: left;
+  margin: 0 0 7px;
+}
+
+.header-ur-songs-tools-actions > .button-group {
+
+}
+
+.header-ur-songs-tools-actions > .button-group > .btn {
+  border-color: #ccc;
+  color: #333;
+  min-width: 25px;
+  cursor: pointer;
+  text-align: left;
+  text-overflow: ellipsis;
+  float: left;
+  margin-right: 5px;
+  height: 26px;
+  padding: 0 10px;
+  font-size: 14px;
+  font-weight: 100;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+
+
+.header-ur-songs-tools-actions > .button-group > .btn > .fa {
+  margin: 0 4px;
 }

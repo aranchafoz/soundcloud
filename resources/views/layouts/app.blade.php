@@ -18,7 +18,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
       <!-- Marter layout -->
-    {!! Html::style('assets/css/bootstrap/bootstrap.css') !!}
+    {!! Html::style('assets/css/bootstrap/bootstrap.min.css') !!}
     {!! Html::style('assets/css/views/nav-bar.css') !!}
       <!-- Sub-views Styles -->
     @yield('styles')
@@ -27,7 +27,12 @@
     <!-- Fonts -->
     <link href="{{ asset('fonts/interstate/style.css') }}" rel='stylesheet' type='text/css'>
 
-
+    <!-- Scripts -->
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="https://use.fontawesome.com/14255a829a.js"></script>
+    
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9] -->
@@ -45,10 +50,10 @@
     </div>
 
     <!-- Scripts -->
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     {!! Html::script('assets/js/popper.min.js') !!}
-    {!! Html::script('assets/js/bootstrap.min.js') !!}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    @stack('scripts')
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
