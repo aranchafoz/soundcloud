@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call(UsersTableSeeder::class);
         $this->command->info('INFO: Users table seeded');
+        $this->call(SongsTableSeeder::class);
+        $this->command->info('INFO: Songs table seeded');
         
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
