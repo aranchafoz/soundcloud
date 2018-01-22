@@ -77,7 +77,6 @@
               <div class="row">
                 <div class="col-md-4">
                   <div class="profile-photo">
-                    {{die( asset($user->profile_photo))}}
                     <img class="profile-image" @if($user->profile_photo) src="{{\Storage::disk('public')->url($user->profile_photo)}}"
                     @else src="{{URL::asset('images/profile-default.png')}}" @endif>
                     <a href="#" onclick="getFileInput('profile_photo')" class="btn btn-xs btn-default upload-profile-photo-button">
