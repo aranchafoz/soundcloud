@@ -103,7 +103,6 @@
             </td>
             <td class="ur-songs-table-row-timestamp">
               <span>
-                <!-- TODO: add carbon library (should show like '2 horas') -->
                 {{ $song->getTimeAgo() }}
               </span>
             </td>

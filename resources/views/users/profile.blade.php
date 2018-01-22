@@ -79,7 +79,7 @@
               <ul class="user-media-list">
                 @foreach($user->songs as $song)
                   <li>
-                    @include('songs.song-player', ['song' => $song])
+                    @include('songs.song-player', ['song' => $song, 'user' => $user])
                   </li>
                 @endforeach
               </ul>
