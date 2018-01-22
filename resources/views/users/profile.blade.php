@@ -14,15 +14,19 @@
       @else id="background-default" @endif >
         <div class="row profile-image-row">
           <div class="col-md-3 profile-image-container">
-            <img class="profile-image" @if($user->profile_photo) src="{{asset('images/'.$user->profile_photo)}}"
-            @else src="{{URL::asset('images/profile-default.png')}}" @endif>
-            <a href="#" class="btn btn-xs btn-default upload-profile-photo">Actualizar imagen</a>
+            <div class="profile-photo">
+              <img class="profile-image" @if($user->profile_photo) src="{{asset('images/'.$user->profile_photo)}}"
+              @else src="{{URL::asset('images/profile-default.png')}}" @endif>
+              <a href="#" class="btn btn-xs btn-default upload-profile-photo-button">
+                <i class="fa fa-camera"></i>Actualizar imagen</a>
+            </div>
           </div>
-          <div class="col-md-7">
+          <div class="col-md-6">
             <h3 class="user-profile-name">{{$user->name}}</h4>
           </div>
-          <div class="col-md-2">
-            <a href="#" class="btn btn-xs btn-default upload-landphoto">Subir imagen de cabecera</a>
+          <div class="col-md-3">
+            <a href="#" class="btn btn-xs btn-default upload-landphoto">
+              <i class="fa fa-camera"></i>Subir imagen de cabecera</a>
           </div>
         </div>
       </div>
