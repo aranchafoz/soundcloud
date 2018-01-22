@@ -76,9 +76,9 @@
             </td>
             <td class="ur-songs-table-row-name">
               <div>
-                <span class="song-username">aranchafoz</span>
+                <span class="song-username">{{$user->name}}</span>
               </br>
-                <span>K Pasa K Vols</span>
+                <span>{{$song->name}}</span>
               </div>
             </td>
             <td class="ur-songs-table-row-actions">
@@ -97,12 +97,14 @@
             </td>
             <td class="ur-songs-table-row-duration">
               <span>
+                <!-- TODO: set audio duration -->
                 0:04
               </span>
             </td>
             <td class="ur-songs-table-row-timestamp">
               <span>
-                2 horas
+                <!-- TODO: add carbon library (should show like '2 horas') -->
+                {{$song->released_at}}
               </span>
             </td>
           </tr>

@@ -18,11 +18,17 @@ class SongController extends Controller
    */
   public function getUserSongs($id, Request $request)
   {
-    // get all the songs
-    $songs = Song::where('user_id', '=', $id)->get();
+    if(Auth::user()->id != $id) {
+      return view('home');
+    } else {
+      // get all the songs
+      $songs = Song::where('user_id', '=', $id)->get();
 
-    // load the view and pass the songs
-    return view('songs.index', ['songs' => $songs]);
+      $user = User::find($id);
+
+      // load the view and pass the songs
+      return view('songs.index', ['songs' => $songs, 'user' => $user]);
+    }
   }
 
   /**
