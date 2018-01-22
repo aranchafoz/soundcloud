@@ -14,7 +14,7 @@
         <input type="checkbox" />
       </div>
       <div class="header-ur-songs-tools-actions">
-        <div class="button-group">
+        <div class="tools-button-group">
           <button type="button" class="btn btn-editar">
             <span class="fa fa-pencil" aria-hidden="true"></span>
             Editar pistas
@@ -22,12 +22,43 @@
           </button>
           <button type="button" class="btn btn-addToPlaylist">
             <span class="fa fa-plus" aria-hidden="true"></span>
-            Añadir a una pista
+            Añadir a una lista
           </button>
         </div>
       </div>
       <div class="header-ur-songs-tools-pagination">
+        <div class="header-ur-songs-tools-pagination-numbers">
+          <span>
+            1 - 1 de 1 pistas
+          </span>
+        </div>
+        <div class="header-ur-songs-tools-pagination-buttons">
+          <div class="btn-group pagination-button-group">
+            <button class="btn">
+              <span class="fa fa-caret-left" aria-hidden="true"></span>
+            </button>
+            <button class="btn">
+              <span class="fa fa-caret-right" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
+  <div class="hazte-pro">
+    <div class="hazte-pro-info">
+      <div>
+        Te quedan 180 minutos.
+        <br>
+        <span>
+          Obtén más minutos para subir más material.
+        </span>
+      </div>
+    </div>
+    <div class="hazte-pro-button">
+      <button>
+        Prueba Pro
+      </button>
     </div>
   </div>
   <div class="main-ur-songs">

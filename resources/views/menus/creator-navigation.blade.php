@@ -11,23 +11,23 @@
     <ul role="tablist" class="nav nav-tabs">
       @if(Request::is('*/songs/subir'))
           <li class="nav-item active">
-            <a id="subir-tab" data-toggle="tab" href="/user/{{ Auth::user()->id}}/songs/subir" aria-controls="subir" aria-selected="true" class="nav-link active">
+            <a id="subir-tab" href="{{ url('/user/'. Auth::user()->id .'/songs/subir') }}" aria-controls="subir" aria-selected="true" class="nav-link active">
               Subir
             </a>
           </li>
           <li class="nav-item">
-            <a id="songs-tab" data-toggle="tab" href="/user/{{ Auth::user()->id}}/songs" aria-controls="songs" aria-selected="false" class="nav-link">
+            <a id="songs-tab" href="/user/{{ Auth::user()->id}}/songs" aria-controls="songs" aria-selected="false" class="nav-link">
               Tus pistas
             </a>
           </li>
       @else
           <li class="nav-item">
-            <a id="subir-tab" data-toggle="tab" href="/user/{{ Auth::user()->id}}/songs/subir" aria-controls="subir" aria-selected="false" class="nav-link">
+            <a id="subir-tab" href="{{ url('/user/'. Auth::user()->id .'/songs/subir') }}" aria-controls="subir" aria-selected="false" class="nav-link">
               Subir
             </a>
           </li>
           <li class="nav-item active">
-            <a id="songs-tab" data-toggle="tab" href="/user/{{ Auth::user()->id}}/songs" aria-controls="songs" aria-selected="true" class="nav-link active">
+            <a id="songs-tab" href="/user/{{ Auth::user()->id}}/songs" aria-controls="songs" aria-selected="true" class="nav-link active">
               Tus pistas
             </a>
           </li>
