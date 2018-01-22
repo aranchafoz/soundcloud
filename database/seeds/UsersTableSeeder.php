@@ -14,6 +14,7 @@ class UsersTableSeeder extends Seeder
       DB::table('users')->truncate();
 
       DB::table('users')->insert([
+        'nick' => 'Jesulin95',
         'name' => 'Jesulín de Ubrique',
         'email' => 'jesulin@hotmail.com',
         'password' => bcrypt('123'),
@@ -22,7 +23,8 @@ class UsersTableSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-          'name' => 'TheLoCoXs',
+          'nick' => 'TheLoCoXs',
+          'name' => 'Jaume',
           'email' => 'locoxs95@gmail.com',
           'password' => bcrypt('123'),
           'location' => 'Spain',
@@ -30,7 +32,9 @@ class UsersTableSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-          'name' => 'afoz11',
+          'nick' => 'afoz11',
+          'name' => 'Arancha',
+          'surname' => 'Ferrero Rocher',
           'email' => 'aranchafoz@gmail.com',
           'password' => bcrypt('123'),
           'location' => 'Spain',

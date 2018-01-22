@@ -105,8 +105,35 @@
   margin-right: 5px;
 }
 
+
 .user-media-list {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.btn-primary {
+  background-color: #f50;
+  border-color: #f50;
+  color: #fff;
+}
+
+.btn {
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.modal-content {
+  border-radius: 0;
+  padding: 25px;
+  margin-top: 0;
+}
+
+.title-modal {
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  text-decoration: bold;
+  margin-top: 0;
 }

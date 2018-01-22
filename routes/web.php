@@ -24,4 +24,5 @@ Route::group(['middleware' => 'auth'], function() {
   Route::get('user/{id}', 'UserController@getUserProfile');
   Route::get('user/{id}/songs', 'SongController@getUserSongs');
   Route::get('user/{id}/songs/subir', 'SongController@getUserSongsUpload');
+  Route::put('user/{id}', 'UserController@putEditProfile');
 });

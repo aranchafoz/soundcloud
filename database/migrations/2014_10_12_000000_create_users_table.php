@@ -15,9 +15,12 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nick');
             $table->string('name')->nullable();
+            $table->string('surname')->nullable();
             $table->string('email')->unique();
             $table->string('location')->nullable();
+            $table->string('country')->nullable();
             $table->text('description')->nullable();
             // TODO: Check photo storage
             $table->text('landscape_photo')->nullable();
