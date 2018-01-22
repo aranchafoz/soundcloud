@@ -24,7 +24,7 @@ $factory->define(App\User::class, function (Faker $faker) {
 
 $factory->define(App\Song::class, function (Faker $faker) {
     return [
-      'name' => $faker->name,
+      'name' => $faker->sentence(3),
       'description' => $faker->sentence,
       'image' => 'elfary.jpg',
       'audio' => 'lamandanga.mp3',

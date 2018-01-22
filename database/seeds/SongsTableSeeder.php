@@ -13,5 +13,14 @@ class SongsTableSeeder extends Seeder
     {
       DB::table('songs')->truncate();
       factory(App\Song::class, 50)->create();
+
+      DB::table('songs')->insert([
+        'name' => 'La Mandanga',
+        'description' => 'Melocotonazo',
+        'image' => 'elfary.jpg',
+        'audio' => 'lamandanga.mp3',
+        'released_at' => $faker->date,
+        'user_id' => 1
+      ]);
     }
 }
