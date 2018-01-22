@@ -61,7 +61,54 @@
       </button>
     </div>
   </div>
+
+  <!-- Song list -->
   <div class="main-ur-songs">
+    <table class="ur-songs-table">
+      <tbody>
+        @foreach($songs as $song)
+          <tr class="ur-songs-table-row">
+            <td class="ur-songs-table-row-checkbox">
+              <input type="checkbox">
+            </td>
+            <td class="ur-songs-table-row-photo">
+              <img class="song-image" src="{{asset('images/profile-default.png')}}" >
+            </td>
+            <td class="ur-songs-table-row-name">
+              <div>
+                <span class="song-username">aranchafoz</span>
+              </br>
+                <span>K Pasa K Vols</span>
+              </div>
+            </td>
+            <td class="ur-songs-table-row-actions">
+              <button>
+                <span class="fa fa-ellipsis-h"></span>
+              </button>
+              <button>
+                <span class="fa fa-pencil"></span>
+              </button>
+              <button>
+                <span class="fa fa-trash"></span>
+              </button>
+            </td>
+            <td class="ur-songs-table-row-private">
+              <span class="fa fa-lock"></span>
+            </td>
+            <td class="ur-songs-table-row-duration">
+              <span>
+                0:04
+              </span>
+            </td>
+            <td class="ur-songs-table-row-timestamp">
+              <span>
+                2 horas
+              </span>
+            </td>
+          </tr>
+        @endforeach
+      </tbody>
+    </table>
   </div>
 </div>
 @stop

@@ -115,7 +115,6 @@
 .hazte-pro {
   padding: 15px 20px;
   text-align: left;
-  border-bottom: 1px solid #f2f2f2;
   justify-content: space-between;
   display: flex;
 }
@@ -156,5 +155,133 @@
   padding: 8px 20px;
   border-radius: 3px;
   line-height: 20px;
+  font-family: "Interstate", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
+}
+
+.ur-songs-table {
+  width: 100%;
+}
+
+.ur-songs-table-row {
+  border-top: 1px solid #f2f2f2;
+  height: 60px;
+}
+
+.ur-songs-table-row > td {
+  /*padding: 5px 10px;*/
+}
+
+.ur-songs-table-row-checkbox {
+  width: 42px;
+  padding: 6px 15px;
+  cursor: pointer;
+  line-height: 13px;
+}
+
+.header-ur-songs-tools-selectAll > input {
+  margin: 0;
+}
+
+.ur-songs-table-row-photo {
+  margin-right: 4px;
+  padding: 10px 6px;
+  width: 50px;
+  height: 50px;
+}
+
+.ur-songs-table-row-photo > img {
+  height: 50px;
+  width: 50px;
+}
+
+.ur-songs-table-row-photo {
+  margin-right: 4px;
+  padding: 10px 6px;
+  width: 50px;
+  height: 50px;
+}
+
+.ur-songs-table-row-name {
+  margin-right: 4px;
+  padding: 10px 6px;
+  height: 71px;
+}
+
+.ur-songs-table-row-name > div {
+  height: 100%;
+}
+
+.ur-songs-table-row-name > div > .song-username {
+  height: 18px;
+  color: #999;
+  font-size: 14px;
+  font-style: normal;
+  font-family: "Interstate", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
+}
+
+.ur-songs-table-row-actions {
+  padding: 2px 15px 2px 8px;
+  text-align: right;
+}
+
+.ur-songs-table-row-actions > button {
+  font-size: 11px;
+  height: 22px;
+  line-height: 16px;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  background-color: #fff;
+  cursor: pointer;
+  color: #000;
+  margin: 1px;
+}
+
+.ur-songs-table-row-actions > button > fa-trash {
+  min-width: 25px;
+}
+
+.ur-songs-table-row-private {
+  margin-right: 4px;
+  padding: 10px 0 10px 0;
+  width: 168px;
+  height: 71px;
+  margin-left: 20px;
+  text-align: left;
+}
+
+.ur-songs-table-row-private > span {
+  background: #f50;
+  color: #fff;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  border-radius: 4px;
+  padding: 1px;
+}
+
+.ur-songs-table-row-duration {
+  margin-right: 4px;
+  padding: 10px 0 10px 20px;
+  width: 65px;
+  height: 71px;
+  margin-left: 20px;
+  text-align: right;
+}
+
+.ur-songs-table-row-duration > span {
+  font-size: 12px;
+  font-family: "Interstate", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
+}
+
+.ur-songs-table-row-timestamp {
+  padding: 10px 16px 10px 23px;
+  width: 101px;
+  height: 71px;
+  text-align: right;
+}
+
+.ur-songs-table-row-timestamp > span {
+  font-size: 12px;
+  color: #999;
   font-family: "Interstate", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
 }
