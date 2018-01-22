@@ -65,19 +65,26 @@
       <!-- Modal -->
       <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="editProfileModal" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
-          {!! Form::open(['action' => ['UserController@putEditProfile', $user->id], 'method' => 'put']) !!}
+          {!! Form::open(['action' => ['UserController@putEditProfile', $user->id], 'method' => 'put', 'files' => 'true']) !!}
           {!! Form::token() !!}
           <div class="modal-content">
             <div class="modal-body">
-              <h3>Modifica tu perfil <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <h3 class="title-modal">Modifica tu perfil <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span></button>
               </h3>
               <legend></legend>
               <div class="row">
-                <div class="col-md-3">
-
+                <div class="col-md-4">
+                  <div class="profile-photo">
+                    {{die( asset($user->profile_photo))}}
+                    <img class="profile-image" @if($user->profile_photo) src="{{\Storage::disk('public')->url($user->profile_photo)}}"
+                    @else src="{{URL::asset('images/profile-default.png')}}" @endif>
+                    <a href="#" onclick="getFileInput('profile_photo')" class="btn btn-xs btn-default upload-profile-photo-button">
+                      <i class="fa fa-camera"></i>Actualizar imagen</a>
+                    {{ Form::file('profile_photo', ['id' => 'profile_photo', 'style' => 'display:none', 'accept' => 'image/*']) }}
+                  </div>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-8">
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
@@ -87,8 +94,37 @@
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        {{ Form::label('name', 'Nombre para mostrar *', ['class' => 'form-label']) }}
-                        {{ Form::text('name', $user->name, ['class' => 'form-control', 'required' => 'true']) }}
+                        {{ Form::label('name', 'Nombre', ['class' => 'form-label']) }}
+                        {{ Form::text('name', $user->name, ['class' => 'form-control']) }}
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        {{ Form::label('surname', 'Apellidos', ['class' => 'form-label']) }}
+                        {{ Form::text('surname', $user->surname, ['class' => 'form-control']) }}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        {{ Form::label('location', 'Ciudad', ['class' => 'form-label']) }}
+                        {{ Form::text('location', $user->location, ['class' => 'form-control']) }}
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        {{ Form::label('country', 'País', ['class' => 'form-label']) }}
+                        {{ Form::text('country', $user->country, ['class' => 'form-control']) }}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        {{ Form::label('description', 'Biografía', ['class' => 'form-label']) }}
+                        {{ Form::textarea('description', $user->description, ['class' => 'form-control',
+                          'placeholder' => 'Cuenta un poco sobre tí. Mejor cuanto más breve']) }}
                       </div>
                     </div>
                   </div>

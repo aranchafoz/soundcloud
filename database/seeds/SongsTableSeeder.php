@@ -19,7 +19,7 @@ class SongsTableSeeder extends Seeder
         'description' => 'Melocotonazo',
         'image' => 'elfary.jpg',
         'audio' => 'lamandanga.mp3',
-        'released_at' => $faker->date,
+        'released_at' => '2018/01/21 18:22:00',
         'user_id' => 1
       ]);
     }
