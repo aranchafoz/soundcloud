@@ -3,6 +3,7 @@
 @section('styles')
     @parent
     <link href="{{ asset('assets/css/views/profile.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/views/songs/song-player.css') }}" rel="stylesheet">
 @stop
 
 @section('content')
@@ -61,11 +62,13 @@
           <div class="row">
             <div class="col-md-12">
               @if (count($user->songs) == 0) <h5>No hay elementos que mostrar</h5> @endif
-              @foreach($user->songs as $song)
-                <div class="song-container">
-                  <h4>{{$song->name}}</h4>
-                </div>
-              @endforeach
+              <ul class="user-media-list">
+                @foreach($user->songs as $song)
+                  <li>
+                    @include('songs.song-player', ['song' => $song])
+                  </li>
+                @endforeach
+              </ul>
             </div>
           </div>
         </div>
@@ -73,11 +76,13 @@
           <div class="row">
             <div class="col-md-12">
               @if (count($user->songs) == 0) <h5>No hay elementos que mostrar</h5> @endif
-              @foreach($user->songs as $song)
-                <div class="song-container">
-                  <h4>{{$song->name}}</h4>
-                </div>
-              @endforeach
+              <ul class="user-media-list">
+                @foreach($user->songs as $song)
+                  <li>
+                    @include('songs.song-player', ['song' => $song])
+                  </li>
+                @endforeach
+              </ul>
             </div>
           </div>
         </div>
@@ -85,11 +90,13 @@
           <div class="row">
             <div class="col-md-12">
               @if (count($user->playlists) == 0) <h5>No hay elementos que mostrar</h5> @endif
-              @foreach($user->playlists as $playlist)
-                <div class="song-container">
-                  <h4>{{$playlist->name}}</h4>
-                </div>
-              @endforeach
+              <ul class="user-media-list">
+                @foreach($user->playlists as $playlist)
+                  <li>
+                      <h4>{{$playlist->name}}</h4>
+                  </li>
+                @endforeach
+              </ul>
             </div>
           </div>
         </div>

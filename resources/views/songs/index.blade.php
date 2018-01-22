@@ -29,7 +29,7 @@
       <div class="header-ur-songs-tools-pagination">
         <div class="header-ur-songs-tools-pagination-numbers">
           <span>
-            1 - 1 de 1 pistas
+            1 - {{ count($songs) }} de {{ count($songs) }} pistas
           </span>
         </div>
         <div class="header-ur-songs-tools-pagination-buttons">
@@ -104,7 +104,7 @@
             <td class="ur-songs-table-row-timestamp">
               <span>
                 <!-- TODO: add carbon library (should show like '2 horas') -->
-                {{$song->released_at}}
+                {{ $song->getTimeAgo() }}
               </span>
             </td>
           </tr>
