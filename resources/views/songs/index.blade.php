@@ -45,6 +45,22 @@
       </div>
     </div>
   </div>
+  <div class="hazte-pro">
+    <div class="hazte-pro-info">
+      <div>
+        Te quedan 180 minutos.
+        <br>
+        <span>
+          Obtén más minutos para subir más material.
+        </span>
+      </div>
+    </div>
+    <div class="hazte-pro-button">
+      <button>
+        Prueba Pro
+      </button>
+    </div>
+  </div>
   <div class="main-ur-songs">
   </div>
 </div>
