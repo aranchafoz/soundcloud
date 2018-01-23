@@ -35,15 +35,70 @@ class UserController extends Controller
       $user->location = $request->input('location');
       $user->country = $request->input('country');
       $user->description = $request->input('description');
-      /*$user->profile_photo = Storage::putFileAs(
-        'images', $request->file('profile_photo'), 'profile_photo_'.$id
-      );*/
-      /*$user->profile_photo = $request->file('profile_photo')->storeAs(
-        'images', 'profile_photo_'.$id.'.jpg');*/
 
-      //Storage::disk('public')->put('profile_photo_'.$id, $request->file('profile_photo'));
+      if ($request->file('profile_photo') && $user->profile_photo) {
+        // Delete old profile pic
+        Storage::delete($user->profile_photo);
+      }
 
-      $user->profile_photo = $request->file('profile_photo')->store('public');
+      if ($request->file('profile_photo')) {
+          $user->profile_photo = $request->file('profile_photo')->store('public');
+      }
+
+      if ($user->save()) {
+
+      } else {
+
+      }
+
+      return redirect()->back();
+    }
+
+    /**
+     * PUT function for edit an user pic profile
+     * @param $request http request with inputs
+     * @param $id of the user
+     */
+    public function putEditPicProfile(Request $request, $id) {
+      $user = User::find($id);
+      if (!$user) return abort(404);
+
+      $request->validate([
+        'profile_photo_only' => 'required'
+      ]);
+
+      // Handle user input
+      if ($user->profile_photo) {
+        // Delete old profile pic
+        Storage::delete($user->profile_photo);
+      }
+
+      $user->profile_photo = $request->file('profile_photo_only')->store('public');
+
+      if ($user->save()) {
+
+      } else {
+
+      }
+
+      return redirect()->back();
+    }
+
+    public function putEditLandscapePic(Request $request, $id) {
+      $user = User::find($id);
+      if (!$user) return abort(404);
+
+      $request->validate([
+        'landscape_photo' => 'required'
+      ]);
+
+      // Handle user input
+      if ($user->landscape_photo) {
+        // Delete old profile pic
+        Storage::delete($user->landscape_photo);
+      }
+
+      $user->landscape_photo = $request->file('landscape_photo')->store('public');
 
       if ($user->save()) {
 
