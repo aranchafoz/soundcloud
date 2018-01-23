@@ -101,19 +101,32 @@
 .titleContainer-additional > .privateStatus {
   line-height: 12px;
   margin-top: 2px;
-  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 }
 
-.titleContainer-additional > .privateStatus {
-  font-size: 11px;
-  line-height: 16px;
+.titleContainer-additional > .privateStatus > span {
   background: #f50;
   color: #fff;
-  text-indent: 14px;
+  font-size: 11px;
+  line-height: 16px;
   height: 16px;
   padding: 0 7px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
   border-radius: 4px;
-  width: 67px;
+  font-weight: 600;
+}
+
+.titleContainer-additional > .privateStatus > span::before {
+  font-family: 'FontAwesome';
+  content: "\f023";
+  width: 18px;
+  height: 18px;
+  left: 2px;
+}
+
+@media (max-width: 768px) {
+  .titleContainer-additional > .privateStatus > span > span {
+    display: none;
+  }
 }
 
 .song-content-waveform {
