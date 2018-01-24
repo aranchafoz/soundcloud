@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Song;
 use App\User;
 use App\Playlist;
+use App\SongPlaylist;
 
 class PlaylistService {
 
@@ -27,6 +28,12 @@ class PlaylistService {
       $playlist->private = $playlistValues['private'];
 
       $playlist->save();
+
+      $songPlaylist = new SongPlaylist;
+      $songPlaylist->song_id = $songId;
+      $songPlaylist->playlist_id = $playlist->id;
+
+      $songPlaylist->save();
 
     } catch (QueryException $e) {
 			$rollback = true;

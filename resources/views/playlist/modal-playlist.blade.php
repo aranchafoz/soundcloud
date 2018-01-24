@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="modalPlaylist{{$song}}" tabindex="-1" role="dialog" aria-labelledby="modalPlaylist{{$song}}" aria-hidden="true">
+<div class="modal fade" id="modalPlaylist{{$song->id}}" tabindex="-1" role="dialog" aria-labelledby="modalPlaylist{{$song->id}}" aria-hidden="true">
   <div class="modal-dialog modal-md" role="document">
     <div class="modal-content">
       <div class="modal-body">
@@ -28,7 +28,7 @@
             </div>
           </div>
           <div class="tab-pane in" id="create" role="tabpanel" aria-labelledby="create-tab">
-            {!! Form::open(['action' => ['PlaylistController@createPlaylistFromModal', $user_id, $song], 'method' => 'post']) !!}
+            {!! Form::open(['action' => ['PlaylistController@createPlaylistFromModal', $user_id, $song->id], 'method' => 'post']) !!}
             {!! Form::token() !!}
             <div class="row">
               <div class="col-md-12">
