@@ -27,4 +27,7 @@ Route::group(['middleware' => 'auth'], function() {
   Route::put('user/{id}', 'UserController@putEditProfile');
   Route::put('user/{id}/pic_edit', 'UserController@putEditPicProfile');
   Route::put('user/{id}/landscape_pic', 'UserController@putEditLandscapePic');
+
+  // Playlist
+  Route::post('user/{userId}/songs/{songId}/playlist', 'PlaylistController@createPlaylistFromModal');
 });

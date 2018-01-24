@@ -1,8 +1,6 @@
 <!-- Modal -->
 <div class="modal fade" id="modalPlaylist{{$song}}" tabindex="-1" role="dialog" aria-labelledby="modalPlaylist{{$song}}" aria-hidden="true">
   <div class="modal-dialog modal-md" role="document">
-    {{-- {!! Form::open(['action' => ['UserController@putEditProfile', $user->id], 'method' => 'put', 'files' => 'true']) !!}
-    {!! Form::token() !!}--}}
     <div class="modal-content">
       <div class="modal-body">
         <div id="nav-tabs">
@@ -19,7 +17,7 @@
             </li>
           </ul>
         </div>
-        <div class="tab-content" id="playlistModalTabs">
+        <div class="tab-content tab-modal" id="playlistModalTabs">
           <div class="tab-pane in active" id="add" role="tabpanel" aria-labelledby="add-tab">
             <div class="row">
               <ul>
@@ -30,6 +28,8 @@
             </div>
           </div>
           <div class="tab-pane in" id="create" role="tabpanel" aria-labelledby="create-tab">
+            {!! Form::open(['action' => ['PlaylistController@createPlaylistFromModal', $user_id, $song], 'method' => 'post']) !!}
+            {!! Form::token() !!}
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group modal-label">
@@ -40,16 +40,16 @@
               <div class="col-md-12">
                 <div class="form-group modal-label">
                     La lista quedará &nbsp;
-                    <label class="radio-inline">{{ Form::radio('private', 'true', false, ['selected' => 'selected']) }} privada</label>
+                    <label class="radio-inline">{{ Form::radio('private', 'true', true) }} privada</label>
                     <label class="radio-inline">{{ Form::radio('private', 'false', false, ['class' => 'radio']) }} pública</label>
                     {{ Form::submit('Guardar', ['class' => 'btn btn-save-modal pull-right']) }}
                 </div>
               </div>
             </div>
+            {!! Form::close() !!}
           </div>
         </div>
       </div>
     </div>
-    {{--{!! Form::close() !!}--}}
   </div>
 </div>
