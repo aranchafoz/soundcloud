@@ -95,7 +95,9 @@
               </button>
             </td>
             <td class="ur-songs-table-row-private">
-              <span class="fa fa-lock"></span>
+              @if($song->private)
+                <span class="fa fa-lock"></span>
+              @endif
             </td>
             <td class="ur-songs-table-row-duration">
               <span>

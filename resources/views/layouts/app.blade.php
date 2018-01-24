@@ -19,6 +19,7 @@
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
       <!-- Marter layout -->
     {!! Html::style('assets/css/bootstrap/bootstrap.min.css') !!}
+    {!! Html::style('assets/css/font-awesome/css/font-awesome.min.css') !!}
     {!! Html::style('assets/css/views/nav-bar.css') !!}
       <!-- Sub-views Styles -->
     @yield('styles')
@@ -31,7 +32,6 @@
     <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-    <script src="https://use.fontawesome.com/14255a829a.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
