@@ -22,10 +22,8 @@
                 <i class="fa fa-camera"></i>Actualizar imagen</button>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-12">
-              <h3 class="user-profile-name">{{$user->name}}</h3>
-            </div>
+          <div class="col-md-6">
+            <h3 class="user-profile-name">{{$user->name}}</h3>
           </div>
           <div class="col-md-3">
             <button class="btn btn-xs btn-default upload-landphoto" data-toggle="modal" data-target="#editLandscapePicModal">
@@ -129,7 +127,7 @@
             <div class="profile-photo">
               <img class="profile-image" @if($user->profile_photo) src="{{\Storage::url($user->profile_photo)}}"
               @else src="{{URL::asset('images/profile-default.png')}}" @endif>
-              <a href="#" onclick="getFileInput('profile_photo_only')" class="btn btn-xs btn-default upload-profile-photo-button">
+              <a href="#" onclick="getFileInput('profile_photo_only')" class="btn btn-xs btn-default upload-profile-photo-button upload-profile-photo-modal-lg">
                 <i class="fa fa-camera"></i>Actualizar imagen</a>
               {{ Form::file('profile_photo_only', ['id' => 'profile_photo_only', 'style' => 'display:none', 'accept' => 'image/*']) }}
             </div>
@@ -161,7 +159,7 @@
             <div class="profile-photo">
               <img class="profile-image" @if($user->profile_photo) src="{{\Storage::url($user->profile_photo)}}"
               @else src="{{URL::asset('images/profile-default.png')}}" @endif>
-              <a href="#" onclick="getFileInput('landscape_photo')" class="btn btn-xs btn-default upload-profile-photo-button">
+              <a href="#" onclick="getFileInput('landscape_photo')" class="btn btn-xs btn-default upload-profile-photo-button upload-profile-photo-modal-lg">
                 <i class="fa fa-camera"></i>Actualizar imagen</a>
               {{ Form::file('landscape_photo', ['id' => 'landscape_photo', 'style' => 'display:none', 'accept' => 'image/*']) }}
             </div>
@@ -193,7 +191,7 @@
             <div class="profile-photo">
               <img class="profile-image" @if($user->profile_photo) src="{{\Storage::url($user->profile_photo)}}"
               @else src="{{URL::asset('images/profile-default.png')}}" @endif>
-              <a href="#" onclick="getFileInput('profile_photo')" class="btn btn-xs btn-default upload-profile-photo-button">
+              <a href="#" onclick="getFileInput('profile_photo')" class="btn btn-xs btn-default upload-profile-photo-button upload-profile-photo-modal-lg">
                 <i class="fa fa-camera"></i>Actualizar imagen</a>
               {{ Form::file('profile_photo', ['id' => 'profile_photo', 'style' => 'display:none', 'accept' => 'image/*']) }}
             </div>

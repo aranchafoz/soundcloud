@@ -68,6 +68,8 @@
 
 .profile-image {
   border-radius: 50%;
+  height: 250px;
+  width: 250px;
 }
 
 .upload-landphoto {
@@ -83,9 +85,13 @@
   position: absolute;
   vertical-align: middle;
   margin-bottom: 100px;*/
-  margin: 52% -61%;
+  margin: -60px -70px;
   position: absolute;
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+
+.upload-profile-photo-modal-lg {
+  margin: 200px -190px;
 }
 
 #background-default {
