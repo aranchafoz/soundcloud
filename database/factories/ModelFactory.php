@@ -29,6 +29,7 @@ $factory->define(App\Song::class, function (Faker $faker) {
       'image' => 'elfary.jpg',
       'audio' => 'lamandanga.mp3',
       'released_at' => $faker->date,
+      'private' => $faker->boolean,
       'user_id' => rand(1, 3)
     ];
 });
