@@ -38,6 +38,16 @@ class PlaylistController extends Controller
         // Error creating new playlist
         abort(500);
       }
+    }
 
+    /**
+    * GET method for get all playlists from a user
+    * @param $id user id
+    */
+    public function getUserPlaylists($id) {
+      $user = User::find($id);
+      if (!$user) abort (404);
+
+      return view('playlist.user-playlists', compact('user'));
     }
 }

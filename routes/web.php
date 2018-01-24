@@ -30,4 +30,5 @@ Route::group(['middleware' => 'auth'], function() {
 
   // Playlist
   Route::post('user/{userId}/songs/{songId}/playlist', 'PlaylistController@createPlaylistFromModal');
+  Route::get('/user/{id}/playlists', 'PlaylistController@getUserPlaylists');
 });
