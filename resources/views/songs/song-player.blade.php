@@ -26,8 +26,9 @@
               </span>
             </div>
             <div class="privateStatus">
-                <span class="fa fa-lock"></span>
-                Privada
+                <span class="fa fa-lock">
+                  <span>&nbsp;Privada</span>
+                </span>
             </div>
           </div>
         </div>
