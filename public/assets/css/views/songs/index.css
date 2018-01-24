@@ -287,3 +287,13 @@
   color: #999;
   font-family: "Interstate", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
 }
+
+.modal-label {
+  text-align: left;
+}
+
+.btn-save-modal {
+  background-color: #f50;
+  border-color: #f50;
+  color: #fff;
+}

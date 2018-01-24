@@ -20,7 +20,7 @@
             Editar pistas
             <span class="fa fa-angle-down" aria-hidden="true"></span>
           </button>
-          <button type="button" class="btn btn-addToPlaylist">
+          <button type="button" class="btn btn-addToPlaylist" data-toggle="modal" data-target="#modalPlaylist">
             <span class="fa fa-plus" aria-hidden="true"></span>
             Añadir a una lista
           </button>
@@ -82,9 +82,11 @@
               </div>
             </td>
             <td class="ur-songs-table-row-actions">
-              <button>
-                <span class="fa fa-ellipsis-h"></span>
+              <button type="button" data-toggle="modal" data-target="#modalPlaylist{{$song->id}}">
+                <span class="fa fa-plus"></span>
               </button>
+              @component('playlist.modal-playlist', ['user_id' => Auth::user()->id, 'song' => $song->id, 'playlists' => Auth::user()->playlists])
+              @endcomponent
               <button>
                 <span class="fa fa-pencil"></span>
               </button>

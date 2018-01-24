@@ -71,15 +71,22 @@
                 </a>
                 <ul class="dropdown-menu" role="menu">
                     <li>
-                        <a href="/user/{{ Auth::user()->id}}">
+                        <a href="{{url('/user/'.Auth::user()->id)}}">
                           <img src="https://a-v2.sndcdn.com/assets/images/header/profile/user-853e629.svg" alt="Perfil"  />
                           &nbsp;
                           Perfil
                         </a>
                     </li>
+                    <li>
+                        <a href="{{url('/user/'.Auth::user()->id.'/playlists')}}">
+                          <img src="https://a-v2.sndcdn.com/assets/images/header/profile/playlist-71fefc0.svg" alt="Listas"  />
+                          &nbsp;
+                          Listas
+                        </a>
+                    </li>
                     <li role="separator" class="divider"></li>
                     <li>
-                        <a href="/user/{{ Auth::user()->id}}/songs">
+                        <a href="{{url('/user/'.Auth::user()->id.'/songs')}}">
                           <img src="https://a-v2.sndcdn.com/assets/images/header/profile/track_manager_light-e8f84d9.png" alt="Perfil"  />
                           &nbsp;
                           Pistas
