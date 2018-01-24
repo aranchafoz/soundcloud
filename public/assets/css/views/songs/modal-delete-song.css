@@ -30,8 +30,20 @@
   display: flex;
 }
 
-.delete-song-decisionContainer-info:first-child {
-  margin-right: 18px;
+@media (max-width: 768px) {
+  .delete-song-decisionContainer-infoContainer {
+    flex-direction: column;
+  }
+
+  .delete-song-decisionContainer-info:first-child {
+    margin-bottom: 18px;
+  }
+}
+
+@media (min-width: 769px) {
+  .delete-song-decisionContainer-info:first-child {
+    margin-right: 18px;
+  }
 }
 
 .delete-song-decisionContainer-info {
@@ -49,6 +61,7 @@
 }
 
 .delete-song-decisionContainer-info-buttons {
+  display: inline-flex;
   align-self: flex-end;
 }
 

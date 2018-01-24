@@ -20,9 +20,10 @@
                 <span type="button" class="delete-song-decisionContainer-info-cancelButton" data-dismiss="modal">
                   Cancelar
                 </span>
-                <span class="delete-song-decisionContainer-info-deleteButton">
-                  Eliminar para siempre
-                </span>
+                {!! Form::open(['action' => ['SongController@deleteUserSong', $user->id, $song->id], 'method' => 'delete']) !!}
+                {!! Form::token() !!}
+                  {{ Form::submit('Eliminar para siempre',['class' => 'delete-song-decisionContainer-info-deleteButton']) }}
+                {!! Form::close() !!}
               </div>
             </div>
             <div class="delete-song-decisionContainer-info">
