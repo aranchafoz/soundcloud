@@ -19,6 +19,7 @@
             </div>
             <a>{{ $song->name }}</a>
           </div>
+          <div class="titleContainer-spacer"></div>
           <div class="titleContainer-additional">
             <div class="uploadTime">
               <span>
