@@ -51,6 +51,10 @@
   margin: 0 4px;
 }
 
+.header-ur-songs-tools-selectAll > input {
+  margin: 0;
+}
+
 @media (max-width: 425px) {
   .header-ur-songs-tools-selectAll {
     padding: 3px;
@@ -158,6 +162,8 @@
   font-family: "Interstate", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
 }
 
+/* Song List */
+
 .ur-songs-table {
   width: 100%;
 }
@@ -176,10 +182,6 @@
   padding: 6px 15px;
   cursor: pointer;
   line-height: 13px;
-}
-
-.header-ur-songs-tools-selectAll > input {
-  margin: 0;
 }
 
 .ur-songs-table-row-photo {

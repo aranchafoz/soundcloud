@@ -62,7 +62,7 @@
     </div>
   </div>
 
-  <!-- Song list -->
+  <!-- Songs list -->
   <div class="main-ur-songs">
     <table class="ur-songs-table">
       <tbody>

@@ -1,0 +1,235 @@
+#home-navigation-container {
+  padding: 15px 0;
+  margin: 0 30px;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  #home-navigation-container {
+    width: 93%;
+  }
+}
+
+#nav-tabs {
+  margin-bottom: 30px;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #f2f2f2;
+    font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    font-weight: 100;
+    font-size: 24px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.nav-tabs > li {
+  margin: 0 12px -1px;
+}
+
+.nav-tabs > li > a {
+  color: #333;
+  border-width: 0 0 1px 0;
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
+  line-height: 3.4;
+  font-weight: 100;
+  padding: 0 6px;
+}
+
+.nav-tabs > li.active > a {
+  border-width: 0 0 2px 0;
+  border-bottom: 2px solid #f50;
+  color: #f50;
+  cursor: default;
+  line-height: 3.4;
+  font-weight: 100;
+}
+
+.nav-tabs > li.active > a:hover {
+  border-width: 0 0 1px 0;
+  border-bottom: 1px solid #f50;
+  color: #f50;
+  cursor: default;
+  line-height: 3.4;
+  font-weight: 100;
+}
+
+.nav-tabs > li.active > a:focus {
+  border-width: 0 0 1px 0;
+  border-bottom: 1px solid #f50;
+  color: #f50;
+  cursor: default;
+  line-height: 3.4;
+  font-weight: 100;
+}
+
+.nav-tabs > li > a:hover {
+  border-bottom: 1px solid #333;
+  background-color: #ffffff;
+  outline: 0;
+  line-height: 3.4;
+  font-weight: 100;
+}
+
+/* -------- Content Header -------- */
+.home-content-filters {
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.filters-topFilter {
+  margin-right: 8px;
+}
+
+.filters-topFilter-button {
+  width: 120px;
+  min-width: 31px;
+  border: 1px solid #f50;
+  cursor: pointer;
+  color: #f50;
+  text-align: left;
+  text-overflow: ellipsis;
+  height: 32px;
+  padding: 0 25px 0 10px;
+  border-radius: 3px;
+  background-color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: nowrap;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+
+.filters-spacerFilter {
+  flex-grow: 1;
+}
+
+.home-content-description {
+  margin: 0 0 40px 0;
+  font-weight: 100;
+  color: #999;
+  font-size: 14px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  line-height: 1.3;
+}
+
+
+/* -------- Content Song List -------- */
+
+
+.top-songs-table {
+  width: 100%;
+}
+
+.top-songs-table-header {
+  font-weight: 100;
+    color: #999;
+        font-size: 14px;
+            font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    line-height: 1.3;
+    font-stretch: 100%;
+
+}
+
+.top-songs-table-header > .header-number {
+  text-align: center;
+}
+
+.top-songs-table-header > .header-name {
+  padding-left: 6px;
+}
+
+.top-songs-table-row {
+  border-top: 1px solid #f2f2f2;
+  height: 60px;
+}
+
+.top-songs-table-row > td {
+  /*padding: 5px 10px;*/
+}
+
+.top-songs-table-row-number {
+  width: 42px;
+  padding: 6px 15px;
+  cursor: pointer;
+  line-height: 13px;
+  font-size: 16px;
+  font-family: "InterstateSound Tnum", "Interstate", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
+}
+
+.top-songs-table-row-photo {
+  margin-right: 4px;
+  padding: 10px 6px;
+  width: 50px;
+  height: 50px;
+}
+
+.top-songs-table-row-photo > img {
+  height: 50px;
+  width: 50px;
+}
+
+.top-songs-table-row-photo {
+  margin-right: 4px;
+  padding: 10px 6px;
+  width: 50px;
+  height: 50px;
+}
+
+.top-songs-table-row-name {
+  margin-right: 4px;
+  padding: 10px 6px;
+  height: 71px;
+}
+
+.top-songs-table-row-name > div {
+  height: 100%;
+}
+
+.top-songs-table-row-name > div > .song-username {
+  height: 18px;
+  color: #999;
+  font-size: 14px;
+  font-style: normal;
+  font-family: "Interstate", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
+}
+
+.top-songs-table-row-actions {
+  padding: 2px 15px 2px 8px;
+  text-align: right;
+}
+
+.top-songs-table-row-actions > button {
+  font-size: 11px;
+  height: 22px;
+  line-height: 16px;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  background-color: #fff;
+  cursor: pointer;
+  color: #000;
+  margin: 1px;
+}
+
+.top-songs-table-row-actions > button > fa-trash {
+  min-width: 25px;
+}
+
+.top-songs-table-row-plays {
+  margin-right: 4px;
+  padding: 10px 0 10px 20px;
+  width: 65px;
+  height: 71px;
+  margin-left: 20px;
+  text-align: right;
+}
+
+.top-songs-table-row-plays > span {
+  font-size: 12px;
+  font-family: "Interstate", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
+}
+
+.top-songs-table-row-plays > span > img {
+  width: 16px;
+  margin: 0 0 2px;
+}

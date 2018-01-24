@@ -1,23 +1,96 @@
 @extends('layouts.app')
 
+@section('styles')
+    @parent
+    <link href="{{ asset('assets/css/views/home.css') }}" rel="stylesheet">
+@stop
+
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+<div id="home-navigation-container" class="container">
+  <!-- Nav tabs -->
+  <div id="nav-tabs">
+    <ul role="tablist" class="nav nav-tabs">
+      <li class="nav-item">
+        <a data-toggle="tab" aria-controls="subir" aria-selected="true" class="nav-link">
+          Stream
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a data-toggle="tab" aria-controls="songs" aria-selected="false" class="nav-link active">
+          Listas de éxitos
+        </a>
+      </li>
+      <li class="nav-item">
+        <a data-toggle="tab" aria-controls="estadisticas" aria-selected="false" class="nav-link">
+          Descubre
+        </a>
+      </li>
+    </ul>
+  </div>
 
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
+  <!-- Content -->
+  <div id="home-content">
+    <div class="home-content-filters">
+      <div class="filters-topFilter">
+        <button class="filters-topFilter-button">
+          <span>Top 50</span>
+        </button>
+      </div>
+      <div class="filters-spacerFilter"></div>
     </div>
+    <h3 class="home-content-description">
+      Las pistas más reproducidas en SoundCloud
+    </h3>
+
+    <!-- Songs List -->
+    <div class="home-content-songsList">
+      <table class="top-songs-table">
+        <thead>
+          <tr class="top-songs-table-header">
+            <th class="header-number"><h5>#</h5></th>
+            <th></th>
+            <th class="header-name"><h5>Pista</h5></th>
+            <th></th>
+            <th class="header-plays"><h5>Reproducciones</h5></th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr class="top-songs-table-row">
+              <td class="top-songs-table-row-number">
+                <span>1</span>
+              </td>
+              <td class="top-songs-table-row-photo">
+                <img class="song-image" src="{{asset('images/profile-default.png')}}" >
+              </td>
+              <td class="top-songs-table-row-name">
+                <div>
+                  <span class="song-username">hjkl</span>
+                </br>
+                  <span>rtyujknbyb yguklmn</span>
+                </div>
+              </td>
+              <td class="top-songs-table-row-actions">
+                <button>
+                  <span class="fa fa-plus"></span>
+                </button>
+                <button>
+                  <span class="fa fa-pencil"></span>
+                </button>
+                <button>
+                  <span class="fa fa-trash"></span>
+                </button>
+              </td>
+              <td class="top-songs-table-row-plays">
+                <span>
+                  <img src="https://a-v2.sndcdn.com/assets/images/playback/play-91b117d.svg">
+                  <!-- TODO: set audio plays -->
+                  3,95M
+                </span>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 @endsection
