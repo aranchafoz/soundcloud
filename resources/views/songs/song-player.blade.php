@@ -26,9 +26,11 @@
               </span>
             </div>
             <div class="privateStatus">
+              @if($song->private)
                 <span class="fa fa-lock">
                   <span>&nbsp;Privada</span>
                 </span>
+              @endif
             </div>
           </div>
         </div>
