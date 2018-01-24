@@ -55,24 +55,27 @@
           </tr>
         </thead>
         <tbody>
+          @for($i = 0; $i <= (count($songs) - 1); $i++)
             <tr class="top-songs-table-row">
               <td class="top-songs-table-row-number">
-                <span>1</span>
+                <span>{{$i + 1}}</span>
               </td>
               <td class="top-songs-table-row-photo">
                 <img class="song-image" src="{{asset('images/profile-default.png')}}" >
               </td>
               <td class="top-songs-table-row-name">
                 <div>
-                  <span class="song-username">hjkl</span>
+                  <span class="song-username">{{$songs[$i]->user->name}}</span>
                 </br>
-                  <span>rtyujknbyb yguklmn</span>
+                  <span>{{$songs[$i]->name}}</span>
                 </div>
               </td>
               <td class="top-songs-table-row-actions">
-                <button>
+                <button type="button" data-toggle="modal" data-target="#modalPlaylist{{$songs[$i]->id}}">
                   <span class="fa fa-plus"></span>
                 </button>
+                @component('playlist.modal-playlist', ['user_id' => $songs[$i]->user->id, 'song' => $songs[$i]->id, 'playlists' => Auth::user()->playlists])
+                @endcomponent
                 <button>
                   <span class="fa fa-pencil"></span>
                 </button>
@@ -84,10 +87,11 @@
                 <span>
                   <img src="https://a-v2.sndcdn.com/assets/images/playback/play-91b117d.svg">
                   <!-- TODO: set audio plays -->
-                  3,95M
+                  {{$songs[$i]->plays}}M
                 </span>
               </td>
             </tr>
+          @endfor
         </tbody>
       </table>
     </div>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Song;
+
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -28,7 +30,9 @@ class HomeController extends Controller
       if(Auth::guest()) {
         return view('welcome');
       } else {
-        return view('home');
+        $songs = Song::all();
+
+        return view('home', ['songs' => $songs]);
       }
     }
 }
