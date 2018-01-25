@@ -20,9 +20,36 @@
         <div class="tab-content tab-modal" id="playlistModalTabs">
           <div class="tab-pane in active" id="add" role="tabpanel" aria-labelledby="add-tab">
             <div class="row">
-              <ul>
+              <ul class="playlist-modal-index">
                 @foreach ($playlists as $playlist)
-                  <li>{{$playlist->name}}</li>
+                  <li class="add-to-playlist">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <img class="image-modal-playlist" @if($playlist->image) src="{{\Storage::url($playlist->image)}}"
+                        @else src="{{URL::asset('images/profile-default.png')}}" @endif >
+                      </div>
+                      <div class="col-md-6">
+                        {{$playlist->name}}
+                      </div>
+                      <div class="col-md-3">
+                        @if (!$playlist->containsSong($song))
+                          {!! Form::open(['action' => ['PlaylistController@addSongToPlaylist', $playlist->id, $song->id], 'method' => 'post']) !!}
+                          {!! Form::token() !!}
+
+                          {{ Form::submit('Añadir a la lista', ['class' => 'btn btn-default']) }}
+
+                          {!! Form::close() !!}
+                        @else
+                          {{--{!! Form::open(['action' => ['UserController@putEditProfile', $user->id], 'method' => 'put']) !!}
+                          {!! Form::token() !!}
+
+                          {{ Form::submit('Añadido', ['class' => 'btn btn-default']) }}
+
+                          {!! Form::close() !!}--}}
+                        @endif
+                      </div>
+                    </div>
+                  </li>
                 @endforeach
               </ul>
             </div>

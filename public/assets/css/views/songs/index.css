@@ -301,3 +301,20 @@
 .tab-modal {
   margin-top: 20px;
 }
+
+.playlist-modal-index {
+  list-style: none;
+  margin: 0;
+}
+
+.add-to-playlist {
+  float: left;
+  padding: 10px 0;
+  margin-right: 30px;
+  width: 100%;
+}
+
+.image-modal-playlist {
+  width: auto;
+  height: 60px;
+}

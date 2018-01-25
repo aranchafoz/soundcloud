@@ -20,4 +20,16 @@ class Playlist extends Model
     $time_ago = Carbon::parse($this->created_at)->diffForHumans(null, true);
     return $time_ago;
   }
+
+  /**
+  * Returns if a song is contained into a playlist
+  */
+  public function containsSong($song) {
+
+    foreach ($this->songs as $songPlaylist) {
+      if ($song->id == $songPlaylist->song->id) return true;
+    }
+
+    return false;
+  }
 }

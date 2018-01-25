@@ -7,6 +7,7 @@ use App\Song;
 use App\User;
 use App\Playlist;
 use App\ServiceLayer\PlaylistService;
+use App\SongPlaylist;
 
 class PlaylistController extends Controller
 {
@@ -49,5 +50,20 @@ class PlaylistController extends Controller
       if (!$user) abort (404);
 
       return view('playlist.user-playlists', compact('user'));
+    }
+
+    /**
+    * POST method for add a song to an existing playlist
+    * @param $playlistId id of the playlist
+    * @param $songid id of the song
+    */
+    public function addSongToPlaylist(Request $request, $playlistId, $songId) {
+      $songPlaylist = new SongPlaylist;
+      $songPlaylist->playlist_id = $playlistId;
+      $songPlaylist->song_id = $songId;
+
+      if ($songPlaylist->save()) {
+        return redirect()->back();
+      }
     }
 }
