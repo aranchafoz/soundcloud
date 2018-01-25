@@ -109,22 +109,32 @@ class SongController extends Controller
    */
   public function updateUserSong(Request $request, $userId, $songId)
   {
-      // store
+      $user = User::find($userId);
       $song = Song::find($songId);
-      if($song == null || $song->user->id != $userId || $song->user->id != Auth::user()->id) {
-        return redirect()->action('SongController@getUserSongs', ['id' => $userId]);
-      }
 
+      if (!$user) return abort(404);
+      if (!$song) return abort(404);
+      if ($song->user->id != $userId || $song->user->id != Auth::user()->id) return abort(404);
+
+      // validate
+      $request->validate([
+        'song_photo' => 'required'
+      ]);
+
+      // store
       $song->name         = $request->input('name');
       $song->description  = $request->input('description');
-      // $song->image        = null;//$request->input('image');
-      // $song->audio        = null;//$request->input('audio');
-      $song->private  = ( $request->input('privacy') == "private" ) ? true : false;
+      $song->private      = ( $request->input('privacy') == "private" ) ? true : false;
       $song->public_link  = $request->input('public_link');
-      // FIXME: set Date.now() value
-      //$song->released_at  = null;
-      // default values on create song
-      //$song->plays       = 0;
+
+      if ($request->file('song_photo') && $song->image) {
+        // Delete old song image
+        Storage::delete($song->image);
+      }
+
+      if ($request->file('song_photo')) {
+          $song->image = $request->file('song_photo')->store('public');
+      }
 
       // associate with user
       $userId = Auth::user()->id;
@@ -133,6 +143,45 @@ class SongController extends Controller
       // save song
       $song->save();
       return redirect()->action('SongController@getUserSongs', ['id' => $userId]);
+  }
+
+  /**
+   * Update the song photo
+   *
+   * @param  int  $userId
+   * @param  int  $songId
+   * @return Response
+   */
+  public function putEditPicSong(Request $request, $userId, $songId)
+  {
+    $user = User::find($userId);
+    $song = Song::find($songId);
+
+    if (!$user) return abort(404);
+    if (!$song) return abort(404);
+    if ($song->user->id != $userId || $song->user->id != Auth::user()->id) return abort(404);
+
+    $request->validate([
+      'song_photo' => 'required'
+    ]);
+
+    // Delete old song image
+    if ($song->image) {
+      Storage::delete($song->image);
+    }
+
+    // store
+    $song->image = $request->file('song_photo')->store('public');
+    //$song->save()
+
+    // associate with user
+    $userId = Auth::user()->id;
+    $song->user()->associate($userId);
+
+    // save song
+    $song->save();
+    return redirect()->back();
+    //return redirect()->action('SongController@getUserSongs', ['id' => $userId]);
   }
 
   /**

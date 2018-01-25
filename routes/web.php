@@ -31,6 +31,7 @@ Route::group(['middleware' => 'auth'], function() {
   Route::get('user/{id}/songs', 'SongController@getUserSongs');
   Route::get('user/{id}/songs/subir', 'SongController@getUserSongsUpload');
   Route::put('user/{userId}/songs/{songId}', 'SongController@updateUserSong');
+  Route::put('user/{userId}/songs/{songId}/pic_edit', 'SongController@putEditPicSong');
   Route::delete('user/{userId}/songs/{songId}', 'SongController@deleteUserSong');
 
   // Playlist
