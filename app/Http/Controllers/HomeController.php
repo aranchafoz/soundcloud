@@ -30,7 +30,7 @@ class HomeController extends Controller
       if(Auth::guest()) {
         return view('welcome');
       } else {
-        $songs = Song::all();
+        $songs = Song::orderBy('plays', 'desc')->take(50)->get();
 
         return view('home', ['songs' => $songs]);
       }

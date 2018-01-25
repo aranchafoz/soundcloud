@@ -19,7 +19,7 @@
       </button>
       {{ Form::file('song_audio', ['id' => 'song_audio', 'style' => 'display:none', 'accept' => 'audio/*']) }}
     </div>
-    <div class="main-upload-additional">
+    <div class="main-upload-additional" style="display:none;">
       <label>
         <input type="checkbox" checked="checked" />
         <span>Crear una lista cuando hay varios archivos seleccionados</span>
