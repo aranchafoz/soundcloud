@@ -23,7 +23,7 @@
             </li>
           </ul>
         </div>
-        @component('songs.song-form', ['user' => $user, 'song' => $song])
+        @component('songs.edit-form', ['user' => $user, 'song' => $song])
         @endcomponent
       </div>
     </div>

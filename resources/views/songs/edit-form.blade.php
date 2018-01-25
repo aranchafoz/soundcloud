@@ -1,18 +1,20 @@
 <div>
+  {!! Form::open(['action' => ['SongController@updateUserSong', $user->id, $song->id], 'method' => 'put', 'files' => 'true']) !!}
+  {!! Form::token() !!}
   <div class="song-form-content">
     <div class="song-form-fields">
       <div class="song-form-fields-title">
         <span class="song-form-fields-titleLabel">
           Título
         </span>
-        <input class="song-form-fields-titleInput">
+        {{ Form::text('name', $song->name, ['class' => 'song-form-fields-titleInput', 'required' => 'true']) }}
       </div>
 
       <div class="song-form-fields-link">
         <span class="song-form-fields-linkPrefix">
           soundcloud.com/aranchafoz/
         </span>
-        <input class="song-form-fields-linkInput" type="text" value="k-pasa-k-vols" aria-required="true" aria-invalid="false" aria-describedby="">
+        {{ Form::text('public_link', $song->public_link, ['class' => 'song-form-fields-linkInput', 'required' => 'true']) }}
       </div>
 
       <div class="song-form-fields-image">
@@ -32,18 +34,17 @@
         <span class="song-form-fields-descriptionLabel">
           Descripción
         </span>
-        <textarea class="song-form-fields-descriptionTextarea" rows="3" placeholder="Describe tu pista" aria-required="false" aria-invalid="false" aria-describedby="">
-          Hola k ase
-        </textarea>
+        {{ Form::textarea('description', $song->description, ['class' => 'song-form-fields-descriptionTextarea', 'required' => 'true', 'rows' => '3', 'placeholder' => 'Describe tu pista']) }}
+
       </div>
 
       <div class="song-form-fields-private">
-          <input type="radio" value="private">
+          {{ Form::radio('privacy', 'private', $song->private) }}
           <span class="song-form-fields-privateLabel">
             privada
           </span>
           &nbsp;
-          <input type="radio" value="public">
+          {{ Form::radio('privacy', 'public', !$song->private) }}
           <span class="song-form-fields-privateLabel">
             pública
           </span>
@@ -56,9 +57,7 @@
           <span>*</span>
           Campos obligatorios
         </div>
-        <button class="song-form-saveButton">
-          Guardar
-        </button>
+        {{ Form::submit('Guardar cambios',['class' => 'song-form-saveButton']) }}
         <button class="song-form-cancelButton">
           Cancelar
         </button>
@@ -70,4 +69,5 @@
     </div>
 
   </div>
+  {!! Form::close() !!}
 </div>

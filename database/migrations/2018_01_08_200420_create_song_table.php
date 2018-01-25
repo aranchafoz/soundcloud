@@ -22,7 +22,7 @@ class CreateSongTable extends Migration
             $table->text('audio')->nullable();
             // /TODO
             $table->date('released_at')->nullable();
-            $table->string('public-link')->nullable();
+            $table->string('public_link')->nullable();
             $table->boolean('private')->default(false);
             $table->integer('plays')->default(0);
             $table->integer('user_id')->unsigned()->nullable();

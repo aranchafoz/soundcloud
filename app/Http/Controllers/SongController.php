@@ -103,22 +103,24 @@ class SongController extends Controller
   /**
    * Update the specified resource in storage.
    *
-   * @param  int  $id
+   * @param  int  $userId
+   * @param  int  $songId
    * @return Response
    */
   public function updateUserSong(Request $request, $userId, $songId)
   {
       // store
-      $song = Song::find($id);
+      $song = Song::find($songId);
       if($song == null || $song->user->id != $userId || $song->user->id == Auth::user()->id) {
         return redirect()->action('SongController@getUserSongs');
       }
 
       $song->name         = $request->input('name');
       $song->description  = $request->input('description');
-      $song->image        = $request->input('image');
-      $song->audio        = $request->input('audio');
-
+      $song->image        = null;//$request->input('image');
+      $song->audio        = null;//$request->input('audio');
+      $song->private  = false;
+      $song->public_link  = null;
       // FIXME: set Date.now() value
       $song->released_at  = null;
       // default values on create song
