@@ -76,7 +76,7 @@
                   &nbsp;
                   Añadir a una lista
                 </button>
-                @component('playlist.modal-playlist', ['user_id' => $songs[$i]->user->id, 'song' => $songs[$i]->id, 'playlists' => Auth::user()->playlists])
+                @component('playlist.modal-playlist', ['user_id' => $songs[$i]->user->id, 'song' => $songs[$i], 'playlists' => Auth::user()->playlists])
                 @endcomponent
               </td>
               <td class="top-songs-table-row-plays">

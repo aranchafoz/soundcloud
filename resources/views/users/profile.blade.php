@@ -99,8 +99,9 @@
               @if (count($user->playlists) == 0) <h5>No hay elementos que mostrar</h5> @endif
               <ul class="user-media-list">
                 @foreach($user->playlists as $playlist)
-                  <li>
-                      <h4>{{$playlist->name}}</h4>
+                  <li class="playlist-item-profile">
+                      @component('playlist.component-user-playlist', ['playlist' => $playlist])
+                      @endcomponent
                   </li>
                 @endforeach
               </ul>
