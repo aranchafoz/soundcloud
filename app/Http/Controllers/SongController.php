@@ -106,11 +106,11 @@ class SongController extends Controller
    * @param  int  $id
    * @return Response
    */
-  public function update(Request $request, $id)
+  public function updateUserSong(Request $request, $userId, $songId)
   {
       // store
       $song = Song::find($id);
-      if($song == null) {
+      if($song == null || $song->user->id != $userId || $song->user->id == Auth::user()->id) {
         return redirect()->action('SongController@getUserSongs');
       }
 

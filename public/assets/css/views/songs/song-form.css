@@ -1,0 +1,152 @@
+.song-form-content {
+  margin-top: 25px;
+  position: relative;
+  min-height: 305px;
+}
+
+.song-form-fields {
+  position: relative;
+  padding-left: 278px;
+  text-align: left;
+}
+
+.song-form-fields-title {
+  margin-top: 3px;
+  margin: 10px 0;
+  position: relative;
+  font-size: 12px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+
+.song-form-fields-titleLabel {
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.song-form-fields-titleLabel::after {
+  content: '*';
+  color: #f50;
+  display: inline-block;
+  margin-left: 2px;
+}
+
+.song-form-fields-titleInput {
+  width: 100%;
+    position: relative;
+    z-index: 1;
+
+    display: inline-block;
+    font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.song-form-fields-link {
+  position: relative;
+  margin: 10px 0;
+
+  line-height: 26px;
+  position: relative;
+}
+
+.song-form-fields-linkPrefix {
+  font-size: 14px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-weight: 100;
+  color: #999;
+}
+
+.song-form-fields-linkInput {
+  color: #333;
+
+  display: inline-block;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.song-form-fields-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.song-form-imageField {
+  height: 260px;
+  width: 260px;
+  text-align: center;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+.song-form-image {
+  width: 260px;
+  height: 260px;
+  text-align: center;
+  position: relative;
+  background-repeat: no-repeat;
+
+  display: block;
+
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.song-form-imageButton {
+  position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20%;
+}
+
+.upload-song-photo-button {
+
+}
+
+.song-form-fields-description {
+  margin: 10px 0;
+  position: relative;
+  font-size: 12px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+
+.song-form-fields-descriptionLabel {
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.song-form-fields-descriptionTextarea {
+  resize: vertical;
+  height: 130px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.song-form-fields-private {
+  padding: 5px 0;
+  padding-left: 6px;
+  display: inline-block;
+}
+
+.song-form-fields-privateLabel {
+  font-size: 12px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}

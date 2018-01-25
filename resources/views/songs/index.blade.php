@@ -5,6 +5,8 @@
     <link href="{{ asset('assets/css/views/songs/index.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/views/songs/song-player.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/views/songs/modal-delete-song.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/views/components/modal-nav-tabs.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/views/songs/song-form.css') }}" rel="stylesheet">
 @stop
 
 @section('creator-content')
@@ -89,9 +91,11 @@
               </button>
               @component('playlist.modal-playlist', ['user_id' => Auth::user()->id, 'song' => $song->id, 'playlists' => Auth::user()->playlists])
               @endcomponent
-              <button>
+              <button type="button" data-toggle="modal" data-target="#modalEditSong{{$song->id}}">
                 <span class="fa fa-pencil"></span>
               </button>
+              @component('songs.modal-edit-song', ['user' => Auth::user(), 'song' => $song])
+              @endcomponent
               <button type="button" data-toggle="modal" data-target="#modalDeleteSong{{$song->id}}">
                 <span class="fa fa-trash"></span>
               </button>
