@@ -1,5 +1,6 @@
 .song-container {
   height: auto;
+  width: 100%;
 }
 
 .song-body {
@@ -64,6 +65,7 @@
 
 .titleContainer-usernameTitle {
   margin-right: 5px;
+  text-align: left;
 }
 
 .titleContainer-usernameTitle > .username > a {
@@ -82,6 +84,10 @@
   font-weight: 100;
   color: #333;
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+
+.titleContainer-spacer {
+  flex-grow: 1;
 }
 
 .titleContainer-additional {

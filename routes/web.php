@@ -21,12 +21,17 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Authenticated users middleware
 Route::group(['middleware' => 'auth'], function() {
+  // User
   Route::get('user/{id}', 'UserController@getUserProfile');
-  Route::get('user/{id}/songs', 'SongController@getUserSongs');
-  Route::get('user/{id}/songs/subir', 'SongController@getUserSongsUpload');
   Route::put('user/{id}', 'UserController@putEditProfile');
   Route::put('user/{id}/pic_edit', 'UserController@putEditPicProfile');
   Route::put('user/{id}/landscape_pic', 'UserController@putEditLandscapePic');
+
+  // Song
+  Route::get('user/{id}/songs', 'SongController@getUserSongs');
+  Route::get('user/{id}/songs/subir', 'SongController@getUserSongsUpload');
+  Route::put('user/{userId}/songs/{songId}', 'SongController@updateUserSong');
+  Route::delete('user/{userId}/songs/{songId}', 'SongController@deleteUserSong');
 
   // Playlist
   Route::post('user/{userId}/songs/{songId}/playlist', 'PlaylistController@createPlaylistFromModal');

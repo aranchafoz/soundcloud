@@ -11,7 +11,7 @@
   <div id="nav-tabs">
     <ul role="tablist" class="nav nav-tabs">
       <li class="nav-item">
-        <a data-toggle="tab" aria-controls="subir" aria-selected="true" class="nav-link">
+        <a aria-controls="subir" aria-selected="true" class="nav-link">
           Stream
         </a>
       </li>
@@ -21,7 +21,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a data-toggle="tab" aria-controls="estadisticas" aria-selected="false" class="nav-link">
+        <a aria-controls="estadisticas" aria-selected="false" class="nav-link">
           Descubre
         </a>
       </li>
@@ -73,15 +73,11 @@
               <td class="top-songs-table-row-actions">
                 <button type="button" data-toggle="modal" data-target="#modalPlaylist{{$songs[$i]->id}}">
                   <span class="fa fa-plus"></span>
+                  &nbsp;
+                  Añadir a una lista
                 </button>
                 @component('playlist.modal-playlist', ['user_id' => $songs[$i]->user->id, 'song' => $songs[$i]->id, 'playlists' => Auth::user()->playlists])
                 @endcomponent
-                <button>
-                  <span class="fa fa-pencil"></span>
-                </button>
-                <button>
-                  <span class="fa fa-trash"></span>
-                </button>
               </td>
               <td class="top-songs-table-row-plays">
                 <span>

@@ -61,12 +61,12 @@ class SongController extends Controller
     $song->plays       = 0;
 
     // associate with user
-    $id = Auth::user()->id;
-    $song->user()->associate($id);
+    $userId = Auth::user()->id;
+    $song->user()->associate($userId);
 
     // save song
     $song->save();
-    return redirect()->action('SongController@index');
+    return redirect()->action('SongController@getUserSongs', ['id' => $userId]);
   }
 
   /**
@@ -78,7 +78,7 @@ class SongController extends Controller
   public function show($id) {
       $song = Song::find($id);
       if($song == null) {
-        return redirect()->action('SongController@index');
+        return redirect()->action('SongController@getUserSongs');
       }
       $user = User::where('id', '=', $song->user_id)->get();
       return view('songs.show', ['song' => $song, 'user' => $user]);
@@ -94,7 +94,7 @@ class SongController extends Controller
       // get the song
       $song = Song::find( $id );
       if($song == null) {
-        return redirect()->action('SongController@index');
+        return redirect()->action('SongController@getUserSongs');
       }
       // show the edit form and pass the song
       return view('songs.edit', ['song' => $song]);
@@ -103,48 +103,51 @@ class SongController extends Controller
   /**
    * Update the specified resource in storage.
    *
-   * @param  int  $id
+   * @param  int  $userId
+   * @param  int  $songId
    * @return Response
    */
-  public function update(Request $request, $id)
+  public function updateUserSong(Request $request, $userId, $songId)
   {
       // store
-      $song = Song::find($id);
-      if($song == null) {
-        return redirect()->action('SongController@index');
+      $song = Song::find($songId);
+      if($song == null || $song->user->id != $userId || $song->user->id == Auth::user()->id) {
+        return redirect()->action('SongController@getUserSongs');
       }
 
       $song->name         = $request->input('name');
       $song->description  = $request->input('description');
-      $song->image        = $request->input('image');
-      $song->audio        = $request->input('audio');
-
+      $song->image        = null;//$request->input('image');
+      $song->audio        = null;//$request->input('audio');
+      $song->private  = false;
+      $song->public_link  = null;
       // FIXME: set Date.now() value
       $song->released_at  = null;
       // default values on create song
       $song->plays       = 0;
 
       // associate with user
-      $id = Auth::user()->id;
-      $song->user()->associate($id);
+      $userId = Auth::user()->id;
+      $song->user()->associate($userId);
 
       // save song
       $song->save();
-      return redirect()->action('SongController@index');
+      return redirect()->action('SongController@getUserSongs', ['id' => $userId]);
   }
 
   /**
    * Remove the specified resource from storage.
    *
-   * @param  int  $id
+   * @param  int  $userId
+   * @param  int  $songId
    * @return Response
    */
-  public function destroy($id)
+  public function deleteUserSong($userId, $songId)
   {
-      $song = Song::find($id);
-      if($song != null) {
+      $song = Song::find($songId);
+      if($song != null && $song->user->id == $userId && $song->user->id == Auth::user()->id) {
         $song->delete();
       }
-      return redirect()->action('SongController@index');
+      return redirect()->action('SongController@getUserSongs', ['id' => $userId]);
   }
 }

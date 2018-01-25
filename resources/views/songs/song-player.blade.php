@@ -19,6 +19,7 @@
             </div>
             <a>{{ $song->name }}</a>
           </div>
+          <div class="titleContainer-spacer"></div>
           <div class="titleContainer-additional">
             <div class="uploadTime">
               <span>
@@ -26,9 +27,11 @@
               </span>
             </div>
             <div class="privateStatus">
+              @if($song->private)
                 <span class="fa fa-lock">
                   <span>&nbsp;Privada</span>
                 </span>
+              @endif
             </div>
           </div>
         </div>

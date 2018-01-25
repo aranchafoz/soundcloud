@@ -1,0 +1,130 @@
+.modal-content-delete-song {
+  box-shadow: 0 0 0 rgba(0,0,0,.5);
+  background-color: rgba(0,0,0,0);
+  border-width: 0;
+}
+
+.modal-delete-song-view {
+  background: #FFF;
+  padding: 25px;
+  margin-bottom: 5px;
+}
+
+.modal-delete-song-decisionContainer {
+  background: #FFF;
+  padding: 25px;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.delete-song-decisionContainer-title {
+  margin-top: 0;
+  line-height: 1;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-weight: 400;
+  margin: 0 0 15px;
+  font-size: 16px;
+}
+
+.delete-song-decisionContainer-infoContainer {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .delete-song-decisionContainer-infoContainer {
+    flex-direction: column;
+  }
+
+  .delete-song-decisionContainer-info:first-child {
+    margin-bottom: 18px;
+  }
+}
+
+@media (min-width: 769px) {
+  .delete-song-decisionContainer-info:first-child {
+    margin-right: 18px;
+  }
+}
+
+.delete-song-decisionContainer-info {
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  border-radius: 4px;
+  border: solid 1px #f2f2f2;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-size: 12px;
+}
+
+.delete-song-decisionContainer-info-text {
+  margin-bottom: 15px;
+}
+
+.delete-song-decisionContainer-info-buttons {
+  display: inline-flex;
+  align-self: flex-end;
+}
+
+.delete-song-decisionContainer-info-cancelButton {
+  border: 0;
+  background: 0 0;
+  transition: none;
+  padding-top: 3px;
+  padding-bottom: 3px;
+
+  font-size: 11px;
+  padding: 2px 9px 2px 8px;
+  height: 22px;
+  line-height: 16px;
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  border-radius: 3px;
+  background-color: #fff;
+  cursor: pointer;
+  color: #333;
+  white-space: nowrap;
+  font-weight: 100;
+  text-align: center;
+  vertical-align: baseline;
+}
+
+.delete-song-decisionContainer-info-deleteButton {
+  font-size: 11px;
+  padding: 2px 9px 2px 8px;
+  height: 22px;
+  line-height: 16px;
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  background-color: #fff;
+  cursor: pointer;
+  color: #333;
+  white-space: nowrap;
+  font-weight: 100;
+  text-align: center;
+  vertical-align: baseline;
+}
+
+.delete-song-decisionContainer-info-subcriptionButton {
+  background-color: #f50;
+  border-color: #f50;
+  color: #fff;
+
+  font-size: 11px;
+  padding: 2px 9px 2px 8px;
+  height: 22px;
+  line-height: 16px;
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  border: 1px solid;
+  border-radius: 3px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-weight: 100;
+  text-align: center;
+  vertical-align: baseline;
+}
