@@ -11,10 +11,10 @@
 <div class="main-upload">
   {!! Form::open(['action' => ['SongController@postUserSong', $user->id ], 'method' => 'post', 'files' => 'true']) !!}
   {!! Form::token() !!}
-  <div class="main-upload-container">
+  <div id="main-upload-container" class="main-upload-container">
     <h1 class="main-upload-title">Subir a SoundCloud</h1>
     <div class="main-upload-chooser">
-      <button onclick="getFileInput('song_audio')" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="collapseInfoUpload collapseCreateSongForm">
+      <button onclick="getAudioFileInput('song_audio')" data-toggle="collapse" data-target="#collapseCreateSongForm" aria-expanded="false" aria-controls="collapseCreateSongForm">
         Selecciona un archivo para subir
       </button>
       {{ Form::file('song_audio', ['id' => 'song_audio', 'style' => 'display:none', 'accept' => 'audio/*']) }}
@@ -25,7 +25,7 @@
         <span>Crear una lista cuando hay varios archivos seleccionados</span>
       </label>
     </div>
-    <div class="main-upload-pro multi-collapse collapseInfoUpload show">
+    <div id="collapseInfoUploadPro" class="main-upload-pro">
       <div class="main-upload-pro-info">
         <div>
           Te quedan 180 minutos.
@@ -42,7 +42,7 @@
   </div>
 
   <!-- Create Song Form -->
-  <div class="create-song-form multi-collapse collapseCreateSongForm">
+  <div id="collapseCreateSongForm" class="create-song-form collapse multi-collapse">
     <!-- Nav tabs -->
     <div id="nav-tabs">
       <ul role="tablist" class="nav nav-tabs song-form-tabs">
