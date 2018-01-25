@@ -3,6 +3,7 @@
 @section('styles')
     @parent
     <link href="{{ asset('assets/css/views/songs/upload.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/views/components/modal-nav-tabs.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/views/songs/song-form.css') }}" rel="stylesheet">
 @stop
 
@@ -39,9 +40,29 @@
       </div>
     </div>
   </div>
+
   <!-- Create Song Form -->
   <div class="create-song-form multi-collapse collapseCreateSongForm">
-
+    <!-- Nav tabs -->
+    <div id="nav-tabs">
+      <ul role="tablist" class="nav nav-tabs song-form-tabs">
+        <li class="modal-nav-item active">
+          <a data-toggle="tab" aria-controls="info-basica" aria-selected="true" class="nav-link active">
+            <h3>Información básica</h3>
+          </a>
+        </li>
+        <li class="modal-nav-item">
+          <a aria-controls="metadatos" aria-selected="false" class="nav-link">
+            <h3>Metadatos</h3>
+          </a>
+        </li>
+        <li class="modal-nav-item">
+          <a aria-controls="permisos" aria-selected="false" class="nav-link">
+            <h3>Permisos</h3>
+          </a>
+        </li>
+      </ul>
+    </div>
     <div>
       <div class="song-form-content">
         <div class="song-form-fields">

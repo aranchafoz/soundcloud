@@ -160,3 +160,19 @@
     display: grid;
   }
 }
+
+
+/* Song form */
+.create-song-form {
+  border: 1px solid #f2f2f2;
+  box-shadow: 0 2px 12px -5px rgba(0,0,0,.1);
+  background-color: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 14px 25px 0;
+  margin-bottom: 50px;
+}
+
+.song-form-tabs {
+  margin: 0 !important;
+}
