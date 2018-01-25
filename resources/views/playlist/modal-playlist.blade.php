@@ -40,12 +40,12 @@
 
                           {!! Form::close() !!}
                         @else
-                          {{--{!! Form::open(['action' => ['UserController@putEditProfile', $user->id], 'method' => 'put']) !!}
+                          {!! Form::open(['action' => ['PlaylistController@deleteSongFromPlaylist', $playlist->id, $song->id], 'method' => 'delete']) !!}
                           {!! Form::token() !!}
 
                           {{ Form::submit('Añadido', ['class' => 'btn btn-default']) }}
 
-                          {!! Form::close() !!}--}}
+                          {!! Form::close() !!}
                         @endif
                       </div>
                     </div>

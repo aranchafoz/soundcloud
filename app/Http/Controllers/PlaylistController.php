@@ -66,4 +66,13 @@ class PlaylistController extends Controller
         return redirect()->back();
       }
     }
+
+    public function deleteSongFromPlaylist(Request $request, $playlistId, $songId) {
+      $songPlaylist = SongPlaylist::where('playlist_id', $playlistId)->where('song_id', $songId)->first();
+      if (!$songPlaylist) abort(404);
+
+      if ($songPlaylist->delete()) {
+        return redirect()->back();
+      }
+    }
 }
