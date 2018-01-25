@@ -40,4 +40,5 @@ Route::group(['middleware' => 'auth'], function() {
   Route::post('/playlist/{playlistId}/song/{songId}/add', 'PlaylistController@addSongToPlaylist');
   Route::delete('/playlist/{playlistId}/song/{songId}/add', 'PlaylistController@deleteSongFromPlaylist');
   Route::delete('/playlist/{id}', 'PlaylistController@deletePlaylist');
+  Route::put('playlist/{id}', 'PlaylistController@editPlaylist');
 });

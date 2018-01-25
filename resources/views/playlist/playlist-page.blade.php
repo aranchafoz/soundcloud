@@ -28,7 +28,7 @@
             <div class="profile-photo">
               <img class="playlist-image" @if($playlist->image) src="{{\Storage::url($playlist->image)}}"
               @else src="{{URL::asset('images/profile-default.png')}}" @endif>
-              <button class="btn btn-xs btn-default upload-profile-photo-button" data-toggle="modal" data-target="#editProfilePicModal">
+              <button class="btn btn-xs btn-default upload-profile-photo-button" data-toggle="modal" data-target="#editProfileModal">
                 <i class="fa fa-camera"></i>Actualizar imagen</button>
             </div>
           </div>
@@ -39,7 +39,7 @@
   <div class="row">
     <div class="col-md-9">
       @if(Auth::user()->id == $playlist->user_id)
-      <a href="#" class="btn btn-default"><i class="fa fa-pencil"></i>&nbsp; Editar lista</a>
+      <a href="#" data-toggle="modal" data-target="#editProfileModal" class="btn btn-default"><i class="fa fa-pencil"></i>&nbsp; Editar lista</a>
       <a href="#" data-toggle="modal" data-target="#deletePlaylistModal" class="btn btn-default"><i class="fa fa-trash"></i>&nbsp; Borrar lista</a>
       @endif
       <legend style="margin-top: 10px"></legend>
@@ -62,7 +62,7 @@
                       <span class="compactTrackListItem__number">{{$i+1}}</span>
                       <div class="compactTrackListItem__content sc-truncate">
                         <span class="compactTrackListItem__trackTitle">
-                          CSGO In - Game fa CT Side Dk24uqaxunY
+                          {{$playlist->songs[$i]->song->name}}
                         </span>
                       </div>
                   </div>
@@ -93,7 +93,7 @@
         <legend></legend>
         <div class="row">
           <div class="col-md-12">
-            <p>¿Seguro que quieres eliminar daffgfhm? Esta acción no se puede deshacer.</p>
+            <p>¿Seguro que quieres eliminar {{$playlist->name}}? Esta acción no se puede deshacer.</p>
           </div>
         </div>
         <div class="row">
@@ -108,112 +108,51 @@
   {!! Form::close() !!}
 </div>
 <!-- Modal -->
-<div class="modal fade" id="editLandscapePicModal" tabindex="-1" role="dialog" aria-labelledby="editLandscapePicModal" aria-hidden="true">
-{{--
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <h3 class="title-modal">{{$user->nick}} <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span></button>
-        </h3>
-        <legend></legend>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="profile-photo">
-              <img class="profile-image" @if($user->profile_photo) src="{{\Storage::url($user->profile_photo)}}"
-              @else src="{{URL::asset('images/profile-default.png')}}" @endif>
-              <a href="#" onclick="getFileInput('landscape_photo')" class="btn btn-xs btn-default upload-profile-photo-button upload-profile-photo-modal-lg">
-                <i class="fa fa-camera"></i>Actualizar imagen</a>
-              {{ Form::file('landscape_photo', ['id' => 'landscape_photo', 'style' => 'display:none', 'accept' => 'image/*']) }}
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        {{ Form::submit('Guardar cambios',['class' => 'btn btn-primary', 'type' => 'button']) }}
-      </div>
-    </div>
-  </div>
-  {!! Form::close() !!}
-  --}}
-</div>
-<!-- Modal -->
 <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="editProfileModal" aria-hidden="true">
-  {{--
+  {!! Form::open(['action' => ['PlaylistController@editPlaylist', $playlist->id], 'method' => 'put', 'files' => 'true']) !!}
+  {!! Form::token() !!}
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        <h3 class="title-modal">Modifica tu perfil <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h3 class="title-modal">Información básica <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span></button>
         </h3>
         <legend></legend>
         <div class="row">
           <div class="col-md-4">
             <div class="profile-photo">
-              <img class="profile-image" @if($user->profile_photo) src="{{\Storage::url($user->profile_photo)}}"
+              <img class="profile-image" @if($playlist->image) src="{{\Storage::url($playlist->image)}}"
               @else src="{{URL::asset('images/profile-default.png')}}" @endif>
-              <a href="#" onclick="getFileInput('profile_photo')" class="btn btn-xs btn-default upload-profile-photo-button upload-profile-photo-modal-lg">
+              <a href="#" onclick="getFileInput('image')" class="btn btn-xs btn-default upload-profile-photo-button upload-profile-photo-modal-lg">
                 <i class="fa fa-camera"></i>Actualizar imagen</a>
-              {{ Form::file('profile_photo', ['id' => 'profile_photo', 'style' => 'display:none', 'accept' => 'image/*']) }}
+              {{ Form::file('image', ['id' => 'image', 'style' => 'display:none', 'accept' => 'image/*']) }}
             </div>
           </div>
           <div class="col-md-8">
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  {{ Form::label('nick', 'Nombre para mostrar *', ['class' => 'form-label']) }}
-                  {{ Form::text('nick', $user->nick, ['class' => 'form-control', 'required' => 'true']) }}
+                  {{ Form::label('name', 'Título *', ['class' => 'form-label']) }}
+                  {{ Form::text('name', $playlist->name, ['class' => 'form-control', 'required' => 'true']) }}
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  {{ Form::label('name', 'Nombre', ['class' => 'form-label']) }}
-                  {{ Form::text('name', $user->name, ['class' => 'form-control']) }}
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  {{ Form::label('surname', 'Apellidos', ['class' => 'form-label']) }}
-                  {{ Form::text('surname', $user->surname, ['class' => 'form-control']) }}
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  {{ Form::label('location', 'Ciudad', ['class' => 'form-label']) }}
-                  {{ Form::text('location', $user->location, ['class' => 'form-control']) }}
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  {{ Form::label('country', 'País', ['class' => 'form-label']) }}
-                  {{ Form::text('country', $user->country, ['class' => 'form-control']) }}
-                </div>
-              </div>
-            </div>
-            <div class="row">
               <div class="col-md-12">
-                <div class="form-group">
-                  {{ Form::label('description', 'Biografía', ['class' => 'form-label']) }}
-                  {{ Form::textarea('description', $user->description, ['class' => 'form-control',
-                    'placeholder' => 'Cuenta un poco sobre tí. Mejor cuanto más breve']) }}
+                <div class="form-group modal-label">
+                    La lista quedará &nbsp;
+                    <label class="radio-inline">{{ Form::radio('private', 'true', $playlist->private) }} privada</label>
+                    <label class="radio-inline">{{ Form::radio('private', 'false', !$playlist->private, ['class' => 'radio']) }} pública</label>
                 </div>
               </div>
-            </div>
           </div>
         </div>
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        {{ Form::submit('Guardar cambios',['class' => 'btn btn-primary', 'type' => 'button']) }}
+        {{ Form::submit('Guardar cambios', ['class' => 'btn btn-primary', 'type' => 'button']) }}
       </div>
     </div>
     {!! Form::close() !!}
   </div>
-  --}}
 </div>
 @stop

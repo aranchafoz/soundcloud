@@ -25,6 +25,39 @@ class PlaylistController extends Controller
     }
 
     /**
+    *
+    */
+    public function editPlaylist(Request $request, $id) {
+      $playlist = Playlist::find($id);
+      if (!$playlist) return abort(404);
+
+      // Handle user input
+      $request->validate([
+        'name' => 'required|max:50'
+      ]);
+
+      $playlist->name = $request->input('name');
+      $playlist->private = $request->input('private') == true;
+
+      if ($request->file('image') && $playlist->image) {
+        // Delete old profile pic
+        Storage::delete($playlist->image);
+      }
+
+      if ($request->file('image')) {
+          $playlist->image = $request->file('image')->store('public');
+      }
+
+      if ($playlist->save()) {
+
+      } else {
+
+      }
+
+      return redirect()->back();
+    }
+
+    /**
     * POST function for create a playlist with an existing song
     * @param $request http petition with form inputs
     * @param $userId user creator

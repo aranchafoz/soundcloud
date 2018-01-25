@@ -18,7 +18,7 @@
             <div class="profile-photo">
               <img class="profile-image" @if($user->profile_photo) src="{{\Storage::url($user->profile_photo)}}"
               @else src="{{URL::asset('images/profile-default.png')}}" @endif>
-              <button class="btn btn-xs btn-default upload-profile-photo-button" data-toggle="modal" data-target="#editProfilePicModal">
+              <button class="btn btn-xs btn-default upload-profile-photo-button" data-toggle="modal" data-target="#editPlaylistPicModal">
                 <i class="fa fa-camera"></i>Actualizar imagen</button>
             </div>
           </div>

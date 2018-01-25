@@ -108,7 +108,8 @@
 }
 
 .image-playlist {
-  width: 100%;
+  width: 150px;
+  height: 150px;
 }
 
 .description-playlist {
