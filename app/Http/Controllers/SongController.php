@@ -111,20 +111,20 @@ class SongController extends Controller
   {
       // store
       $song = Song::find($songId);
-      if($song == null || $song->user->id != $userId || $song->user->id == Auth::user()->id) {
-        return redirect()->action('SongController@getUserSongs');
+      if($song == null || $song->user->id != $userId || $song->user->id != Auth::user()->id) {
+        return redirect()->action('SongController@getUserSongs', ['id' => $userId]);
       }
 
       $song->name         = $request->input('name');
       $song->description  = $request->input('description');
-      $song->image        = null;//$request->input('image');
-      $song->audio        = null;//$request->input('audio');
-      $song->private  = false;
-      $song->public_link  = null;
+      // $song->image        = null;//$request->input('image');
+      // $song->audio        = null;//$request->input('audio');
+      $song->private  = ( $request->input('privacy') == "private" ) ? true : false;
+      $song->public_link  = $request->input('public_link');
       // FIXME: set Date.now() value
-      $song->released_at  = null;
+      //$song->released_at  = null;
       // default values on create song
-      $song->plays       = 0;
+      //$song->plays       = 0;
 
       // associate with user
       $userId = Auth::user()->id;
