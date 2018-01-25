@@ -38,8 +38,6 @@
       </div>
 
       <div class="song-form-fields-private">
-
-
           <input type="radio" value="private">
           <span class="song-form-fields-privateLabel">
             privada
@@ -49,8 +47,27 @@
           <span class="song-form-fields-privateLabel">
             pública
           </span>
-
       </div>
     </div>
+
+    <div class="song-form-buttons">
+      <div>
+        <div class="song-form-requieredFieldsLeyend">
+          <span>*</span>
+          Campos obligatorios
+        </div>
+        <button class="song-form-saveButton">
+          Guardar
+        </button>
+        <button class="song-form-cancelButton">
+          Cancelar
+        </button>
+      </div>
+    </div>
+
+    <div class="song-form-footer">
+      <strong>Importante:</strong> al compartir este material, confirmas que tu pista cumple nuestras Condiciones de uso y que no vulneras los derechos de nadie. En caso de duda, consulta nuestras páginas de Información sobre derechos de autor y las PF antes de subir el material.
+    </div>
+
   </div>
 </div>
