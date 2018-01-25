@@ -216,3 +216,38 @@
 .playlist-item-profile {
   margin-bottom: 40px
 }
+
+.playlist-image {
+  height: 250px;
+  width: auto;
+}
+
+.playlist-title {
+  margin-left: 20px;
+  margin-top: 0;
+}
+
+.playlist-values {
+  margin-top: 40px;
+}
+
+.time-ago {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 100;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+
+.playlist-profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.user-name-link {
+  color: #333;
+  font-weight: 100;
+  font-size: 14px;
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  line-height: 1.3;
+}

@@ -34,8 +34,10 @@ Route::group(['middleware' => 'auth'], function() {
   Route::delete('user/{userId}/songs/{songId}', 'SongController@deleteUserSong');
 
   // Playlist
+  Route::get('/playlists/{id}', 'PlaylistController@getPlaylist');
   Route::post('user/{userId}/songs/{songId}/playlist', 'PlaylistController@createPlaylistFromModal');
   Route::get('/user/{id}/playlists', 'PlaylistController@getUserPlaylists');
   Route::post('/playlist/{playlistId}/song/{songId}/add', 'PlaylistController@addSongToPlaylist');
   Route::delete('/playlist/{playlistId}/song/{songId}/add', 'PlaylistController@deleteSongFromPlaylist');
+  Route::delete('/playlist/{id}', 'PlaylistController@deletePlaylist');
 });

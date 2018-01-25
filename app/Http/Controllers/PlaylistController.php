@@ -8,9 +8,22 @@ use App\User;
 use App\Playlist;
 use App\ServiceLayer\PlaylistService;
 use App\SongPlaylist;
+use Illuminate\Support\Facades\Auth;
 
 class PlaylistController extends Controller
 {
+    /**
+    * GET function for display a single playlist
+    * @param $id of the playlist
+    */
+    public function getPlaylist($id) {
+
+      $playlist = Playlist::find($id);
+      if (!$playlist) abort(404);
+
+      return view('playlist.playlist-page', compact('playlist'));
+    }
+
     /**
     * POST function for create a playlist with an existing song
     * @param $request http petition with form inputs
@@ -73,6 +86,15 @@ class PlaylistController extends Controller
 
       if ($songPlaylist->delete()) {
         return redirect()->back();
+      }
+    }
+
+    public function deletePlaylist(Request $request, $id) {
+      $playlist = Playlist::find($id);
+      if (!$playlist) abort(404);
+
+      if ($playlist->delete()) {
+        return redirect()->action('PlaylistController@getUserPlaylists', Auth::user()->id);
       }
     }
 }

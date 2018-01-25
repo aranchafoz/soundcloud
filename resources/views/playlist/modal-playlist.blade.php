@@ -28,10 +28,10 @@
                         <img class="image-modal-playlist" @if($playlist->image) src="{{\Storage::url($playlist->image)}}"
                         @else src="{{URL::asset('images/profile-default.png')}}" @endif >
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-5">
                         {{$playlist->name}}
                       </div>
-                      <div class="col-md-3">
+                      <div class="col-md-4">
                         @if (!$playlist->containsSong($song))
                           {!! Form::open(['action' => ['PlaylistController@addSongToPlaylist', $playlist->id, $song->id], 'method' => 'post']) !!}
                           {!! Form::token() !!}
