@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth'], function() {
   // Song
   Route::get('user/{id}/songs', 'SongController@getUserSongs');
   Route::get('user/{id}/songs/subir', 'SongController@getUserSongsUpload');
+  Route::post('user/{id}/songs', 'SongController@postUserSong');
   Route::put('user/{userId}/songs/{songId}', 'SongController@updateUserSong');
   Route::put('user/{userId}/songs/{songId}/pic_edit', 'SongController@putEditPicSong');
   Route::delete('user/{userId}/songs/{songId}', 'SongController@deleteUserSong');

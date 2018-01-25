@@ -21,7 +21,7 @@ class CreateSongTable extends Migration
             $table->text('image')->nullable();
             $table->text('audio')->nullable();
             // /TODO
-            $table->date('released_at')->nullable();
+            $table->dateTime('released_at')->nullable();
             $table->string('public_link')->nullable();
             $table->boolean('private')->default(false);
             $table->integer('plays')->default(0);
