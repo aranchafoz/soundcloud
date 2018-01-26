@@ -40,17 +40,17 @@
       </div>
       <div class="song-content-footer">
         <ul class="sound__trackList">
-          @for($i=0; $i < count($playlist->songs); $i++)
+          @for($i=0; $i < count($playlist->songs) && $i < 5; $i++)
             <li class="compactTrackList__item">
               <div class="compactTrackListItem">
                 <div class="compactTrackListItem__image">
-                  {{--<span @if($songPlaylist->song->image) style="background-image: url({{\Storage::url($songPlaylist->song->image)}})"
-                  @else style="background-image: url({{URL::asset('images/profile-default.png')}})" @endif ></span>--}}
-                    <img class="sc-artwork" src="{{URL::asset('images/profile-default.png')}}"></img>
+                    <img class="sc-artwork" @if($playlist->songs[$i]->song->image) src="{{\Storage::url($playlist->songs[$i]->song->image)}}"
+                    @else
+                      src="{{URL::asset('images/profile-default.png')}}" @endif ></img>
                     <span class="compactTrackListItem__number">{{$i+1}}</span>
                     <div class="compactTrackListItem__content sc-truncate">
                       <span class="compactTrackListItem__trackTitle">
-                        CSGO In - Game fa CT Side Dk24uqaxunY
+                        {{$playlist->songs[$i]->song->name}}
                       </span>
                     </div>
                 </div>
