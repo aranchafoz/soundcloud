@@ -19,7 +19,8 @@
 
       <div class="song-form-fields-image">
         <div class="song-form-imageField">
-          <img class="song-form-image" src="{{URL::asset('images/profile-default.png')}}">
+          <img class="song-form-image" @if($song->image) src="{{\Storage::url($song->image)}}"
+          @else src="{{URL::asset('images/profile-default.png')}}" @endif>
           <div class="song-form-imageButton">
             <a href="#" onclick="getFileInput('song_photo')" class="btn btn-xs btn-default upload-song-photo-button upload-song-photo-modal-lg">
               <i class="fa fa-camera"></i>

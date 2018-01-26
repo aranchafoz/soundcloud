@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Home
 Route::post('/search', 'SearchController@search');
+Route::get('/lista-exitos', 'HomeController@getListaExitos')->name('lista-exitos');
 
 // Authenticated users middleware
 Route::group(['middleware' => 'auth'], function() {

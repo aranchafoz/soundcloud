@@ -25,7 +25,7 @@
       <ul class="nav navbar-nav">
         <!-- Authentication Links -->
         @guest
-            <li id="lista-exitos"><a>Lista de éxitos</a></li>
+            <li id="lista-exitos"><a href="{{ route('lista-exitos') }}">Lista de éxitos</a></li>
         @else
             <li id="inicio"><a href="{{ route('home') }}">Inicio</a></li>
             <li id="coleccion"><a>Colección</a></li>

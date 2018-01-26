@@ -2,7 +2,8 @@
   <div class="song-body">
     <div class="song-body-image">
       <a href="#">
-        <img class="song-image" src="{{asset('images/profile-default.png')}}" >
+        <img class="song-image" @if($song->image) src="{{\Storage::url($song->image)}}"
+        @else src="{{URL::asset('images/profile-default.png')}}" @endif>
       </a>
     </div>
     <div class="song-content">
