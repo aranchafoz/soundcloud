@@ -9,6 +9,7 @@ use App\Song;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use Carbon\Carbon;
+use App\Comment;
 
 class SongController extends Controller
 {
@@ -213,5 +214,32 @@ class SongController extends Controller
         $song->delete();
       }
       return redirect()->action('SongController@getUserSongs', ['id' => $userId]);
+  }
+
+  /**
+  * Creates a comment for a song
+  * @param $request http petition with form inputs
+  * @param $songId id of the song
+  */
+  public function createComment(Request $request, $songId) {
+    $song = Song::find($songId);
+    if (!$song) return abort(404);
+
+    $request->validate([
+      'content' => 'required',
+    ]);
+
+    $comment = new Comment;
+    $comment->content = $request->input('content');
+    $comment->song_id = $songId;
+    $comment->user_id = Auth::user()->id;
+
+    if ($comment->save()) {
+      // Success
+      return redirect()->back();
+
+    } else {
+      return abort(500);
+    }
   }
 }
