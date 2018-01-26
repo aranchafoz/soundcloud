@@ -1,3 +1,11 @@
+@section('styles')
+    @parent
+    <link href="{{ asset('assets/css/views/songs/index.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/views/songs/song-extended-view.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/views/songs/modal-delete-song.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/views/components/modal-nav-tabs.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/views/songs/song-form.css') }}" rel="stylesheet">
+@stop
 <!-- Modal -->
 <div class="modal fade" id="modalPlaylist{{$song->id}}" tabindex="-1" role="dialog" aria-labelledby="modalPlaylist{{$song->id}}" aria-hidden="true">
   <div class="modal-dialog modal-md" role="document">

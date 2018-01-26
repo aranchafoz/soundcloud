@@ -18,6 +18,10 @@ body {
   margin: 0 auto;
 }
 
+#myContent > div {
+  margin-bottom: 54px;
+}
+
 @media (min-width: 1200px) {
   #myContent {
     width: 1170px;
