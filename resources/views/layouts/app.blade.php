@@ -21,6 +21,7 @@
     {!! Html::style('assets/css/bootstrap/bootstrap.min.css') !!}
     {!! Html::style('assets/css/font-awesome/css/font-awesome.min.css') !!}
     {!! Html::style('assets/css/views/nav-bar.css') !!}
+    {!! Html::style('assets/css/views/songs/song-player.css') !!}
       <!-- Sub-views Styles -->
     @yield('styles')
 
@@ -46,6 +47,11 @@
 
         <div id="myContent">
           @yield('content')
+        </div>
+
+        <div id="footer-player">
+          @component('songs.song-player')
+          @endcomponent
         </div>
     </div>
 
