@@ -76,7 +76,8 @@
               <input type="checkbox">
             </td>
             <td class="ur-songs-table-row-photo">
-              <img class="song-image" src="{{asset('images/profile-default.png')}}" >
+              <img class="song-image" @if($song->image) src="{{\Storage::url($song->image)}}"
+              @else src="{{URL::asset('images/profile-default.png')}}" @endif>
             </td>
             <td class="ur-songs-table-row-name">
               <div>

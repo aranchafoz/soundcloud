@@ -26,7 +26,7 @@ $factory->define(App\Song::class, function (Faker $faker) {
     return [
       'name' => $faker->sentence(3),
       'description' => $faker->sentence,
-      'image' => 'elfary.jpg',
+      'image' => null,
       'audio' => 'lamandanga.mp3',
       'released_at' => $faker->date,
       'public_link' => $faker->sentence(3),
