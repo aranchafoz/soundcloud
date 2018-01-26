@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-  return redirect()->route('home');
+  return redirect()->route('lista-exitos');
 });
 
 Auth::routes();

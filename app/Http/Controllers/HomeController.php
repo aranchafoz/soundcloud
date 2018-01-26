@@ -20,7 +20,7 @@ class HomeController extends Controller
     public function index()
     {
       if(Auth::guest()) {
-        return view('welcome');
+        return redirect()->route('lista-exitos');
       } else {
         $songs = Song::orderBy('plays', 'desc')->take(50)->get();
 
