@@ -4,7 +4,7 @@
     <div class="modal-content modal-content-delete-song">
       <div class="modal-body">
         <section class="modal-delete-song-view">
-          @include('songs.song-player', ['song' => $song, 'user' => $user])
+          @include('songs.song-extended-view', ['song' => $song, 'user' => $user])
         </section>
         <span class="modal-delete-song-divider"></span>
         <section class="modal-delete-song-decisionContainer">

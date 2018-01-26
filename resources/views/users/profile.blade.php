@@ -3,7 +3,7 @@
 @section('styles')
     @parent
     <link href="{{ asset('assets/css/views/profile.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/views/songs/song-player.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/views/songs/song-extended-view.css') }}" rel="stylesheet">
 @stop
 
 @section('content')
@@ -72,7 +72,7 @@
               <ul class="user-media-list">
                 @foreach($user->songs as $song)
                   <li>
-                    @include('songs.song-player', ['song' => $song])
+                    @include('songs.song-extended-view', ['song' => $song])
                   </li>
                 @endforeach
               </ul>
@@ -86,7 +86,7 @@
               <ul class="user-media-list">
                 @foreach($user->songs as $song)
                   <li>
-                    @include('songs.song-player', ['song' => $song, 'user' => $user])
+                    @include('songs.song-extended-view', ['song' => $song, 'user' => $user])
                   </li>
                 @endforeach
               </ul>

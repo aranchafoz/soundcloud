@@ -50,7 +50,6 @@
             <th class="header-number"><h5>#</h5></th>
             <th></th>
             <th class="header-name"><h5>Pista</h5></th>
-            <th></th>
             <th class="header-plays"><h5>Reproducciones</h5></th>
           </tr>
         </thead>
@@ -70,15 +69,6 @@
                 </br>
                   <span>{{$songs[$i]->name}}</span>
                 </div>
-              </td>
-              <td class="top-songs-table-row-actions">
-                <button type="button" data-toggle="modal" data-target="#modalPlaylist{{$songs[$i]->id}}">
-                  <span class="fa fa-plus"></span>
-                  &nbsp;
-                  Añadir a una lista
-                </button>
-                @component('playlist.modal-playlist', ['user_id' => $songs[$i]->user->id, 'song' => $songs[$i], 'playlists' => Auth::user()->playlists])
-                @endcomponent
               </td>
               <td class="top-songs-table-row-plays">
                 <span>

@@ -27,4 +27,15 @@ class HomeController extends Controller
         return view('home', ['songs' => $songs]);
       }
     }
+
+    /**
+     * Show a list of top 50 songs
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getListaExitos() {
+      $songs = Song::orderBy('plays', 'desc')->take(50)->get();
+
+      return view('songs.lista-exitos', ['songs' => $songs]);
+    }
 }
