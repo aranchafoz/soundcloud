@@ -19,6 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// Home
+Route::post('/search', 'SearchController@search');
+
 // Authenticated users middleware
 Route::group(['middleware' => 'auth'], function() {
   // User
@@ -41,4 +44,5 @@ Route::group(['middleware' => 'auth'], function() {
   Route::delete('/playlist/{playlistId}/song/{songId}/add', 'PlaylistController@deleteSongFromPlaylist');
   Route::delete('/playlist/{id}', 'PlaylistController@deletePlaylist');
   Route::put('playlist/{id}', 'PlaylistController@editPlaylist');
+
 });

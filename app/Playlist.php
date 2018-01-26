@@ -32,4 +32,13 @@ class Playlist extends Model
 
     return false;
   }
+
+  public static function searchByFilter($filter) {
+    $playlists = Playlist::where('playlists.name', 'LIKE', "%{$filter}%")
+              ->orWhere('users.name', 'LIKE', "%{$filter}%")
+              ->leftJoin('users', 'playlists.user_id', '=', 'users.id')
+              ->get();
+
+    return $playlists;
+  }
 }

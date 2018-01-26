@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Song;
+use App\Playlist;
 
 use Illuminate\Support\Facades\Auth;
 

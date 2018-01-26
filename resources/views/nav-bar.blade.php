@@ -32,16 +32,17 @@
         @endguest
       </ul>
       <ul class="nav navbar-nav navbar-middle">
-        <form class="navbar-form navbar-left">
+        {!! Form::open(['action' => ['SearchController@search'], 'method' => 'post', 'class' => 'navbar-form navbar-left']) !!}
+        {!! Form::token() !!}
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Buscar artistas, grupos y pistas">
+            {{ Form::text('search', null, ['class' => 'form-control', 'placeholder' => 'Buscar artistas, grupos y pistas']) }}
             <span class="input-group-btn span-btn-search">
-              <button class="btn btn-default" type="button">
+              <button class="btn btn-default" type="submit">
                 <img src="https://a-v2.sndcdn.com/assets/images/header/search-dbfe5cb.svg"  />
               </button>
             </span>
           </div>
-        </form>
+          {!! Form::close() !!}
       </ul>
       <!-- Right Side Of Navbar -->
       <ul class="nav navbar-nav navbar-right">
