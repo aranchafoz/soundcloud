@@ -26,11 +26,19 @@ $factory->define(App\Song::class, function (Faker $faker) {
     return [
       'name' => $faker->sentence(3),
       'description' => $faker->sentence,
-      'image' => null,
-      'audio' => 'lamandanga.mp3',
+      'image' =>'public/elfary.png',
+      'audio' => 'public/lamandanga.mp3',
       'released_at' => $faker->date,
       'public_link' => $faker->sentence(3),
       'private' => $faker->boolean,
-      'user_id' => rand(1, 3)
+      'user_id' => rand(1, 3),
+      'plays' => rand(0, 20000)
     ];
+});
+
+$factory->define(App\SongPlaylist::class, function (Faker $faker) {
+  return [
+    'playlist_id' => rand(1, 2),
+    'song_id' => rand(1, 50)
+  ];
 });

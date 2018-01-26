@@ -23,6 +23,19 @@ class UsersTableSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
+          'nick' => 'Genji',
+          'name' => 'Genji',
+          'surname' => 'Shimada',
+          'email' => 'genji@shimada.com',
+          'password' => bcrypt('123'),
+          'location' => 'Hanamura',
+          'country' => 'Japan',
+          'profile_photo' => 'public/genji.jpg',
+          'landscape_photo' => 'public/hanamura.jpg',
+          'description' => 'Ninja Cyborg'
+          ]);
+
+        DB::table('users')->insert([
           'nick' => 'TheLoCoXs',
           'name' => 'Jaume',
           'email' => 'locoxs95@gmail.com',

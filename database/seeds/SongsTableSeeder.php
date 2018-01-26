@@ -17,8 +17,8 @@ class SongsTableSeeder extends Seeder
       DB::table('songs')->insert([
         'name' => 'La Mandanga',
         'description' => 'Melocotonazo',
-        'image' => 'elfary.jpg',
-        'audio' => 'lamandanga.mp3',
+        'image' => 'public/elfary.jpg',
+        'audio' => 'public/lamandanga.mp3',
         'released_at' => '2018/01/21 18:22:00',
         'user_id' => 1
       ]);
