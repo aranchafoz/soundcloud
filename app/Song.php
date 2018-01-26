@@ -17,6 +17,10 @@ class Song extends Model
       return $this->hasMany('App\SongPlaylist');
     }
 
+    public function comments() {
+      return $this->hasMany('App\Comment');
+    }
+
     public function getTimeAgo() {
       Carbon::setLocale('es');
       $time_ago = Carbon::parse($this->released_at)->diffForHumans(null, true);
