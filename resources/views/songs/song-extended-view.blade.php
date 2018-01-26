@@ -39,6 +39,7 @@
       </div>
       <div class="song-content-waveform">
       </div>
+      @if(Auth::user())
       <div class="song-content-comment">
         <div class="song-content-commentWrapper">
           <div class="song-content-comment-avatar">
@@ -50,6 +51,7 @@
           </div>
         </div>
       </div>
+      @endif
       <div class="song-content-footer">
         <div class="song-footer-rigth">
           @if(count($song->comments) > 0)

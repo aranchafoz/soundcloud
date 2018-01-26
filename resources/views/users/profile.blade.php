@@ -4,6 +4,7 @@
     @parent
     <link href="{{ asset('assets/css/views/profile.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/views/songs/song-extended-view.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/views/playlists/component-playlist.css') }}" rel="stylesheet">
 @stop
 
 @section('content')

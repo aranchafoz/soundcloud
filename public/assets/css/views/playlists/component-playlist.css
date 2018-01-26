@@ -1,0 +1,70 @@
+.sound__trackList {
+  margin-top: 15px;
+  font-size: 12px;
+  border-radius: 0 0 4px 4px;
+  overflow: hidden;
+  border: 1px solid #f2f2f2;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  position: relative;
+}
+
+
+.compactTrackList__item {
+  /*display: list-item;
+  text-align: -webkit-match-parent;*/
+}
+
+.compactTrackListItem {
+    display: block;
+    position: relative;
+    color: #999;
+    line-height: 30px;
+    height: 30px;
+    padding-left: 5px;
+    outline: 0;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.compactTrackListItem__image {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+.sc-artwork {
+  width: 20px;
+  height: 20px;
+  display: block;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.compactTrackListItem__number {
+    margin-right: 5px;
+    margin-left: 5px;
+    color: #333;
+}
+
+.compactTrackListItem__content {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  color: #333;
+}
+
+.sc-truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: normal;
+}
+
+.compactTrackListItem__trackTitle {
+  color: #333;
+}

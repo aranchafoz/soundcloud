@@ -28,7 +28,7 @@ class Song extends Model
     }
 
     public static function searchByFilter($filter) {
-      $songs = Song::where('songs.name', 'LIKE', "%{$filter}%")->orWhere('songs.description', 'LIKE', "%{$filter}%")
+      $songs = Song::addSelect('songs.*')->where('songs.name', 'LIKE', "%{$filter}%")->orWhere('songs.description', 'LIKE', "%{$filter}%")
                 ->orWhere('users.name', 'LIKE', "%{$filter}%")
                 ->leftJoin('users', 'songs.user_id', '=', 'users.id')
                 ->get();

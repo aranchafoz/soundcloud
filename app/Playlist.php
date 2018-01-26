@@ -34,7 +34,7 @@ class Playlist extends Model
   }
 
   public static function searchByFilter($filter) {
-    $playlists = Playlist::where('playlists.name', 'LIKE', "%{$filter}%")
+    $playlists = Playlist::addSelect('playlists.*')->where('playlists.name', 'LIKE', "%{$filter}%")
               ->orWhere('users.name', 'LIKE', "%{$filter}%")
               ->leftJoin('users', 'playlists.user_id', '=', 'users.id')
               ->get();
