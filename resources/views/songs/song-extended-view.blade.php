@@ -39,7 +39,28 @@
       </div>
       <div class="song-content-waveform">
       </div>
+      <div class="song-content-comment">
+        <div class="song-content-commentWrapper">
+          <div class="song-content-comment-avatar">
+            <img class="song-comment-user-image" @if(Auth::user()->image) src="{{\Storage::url(Auth::user()->image)}}"
+            @else src="{{URL::asset('images/profile-default.png')}}" @endif>
+          </div>
+          <div class="song-content-comment-input">
+            <input type="text" class="song-comment-input" title="Escribe un comentario" placeholder="Escribe un comentario">
+          </div>
+        </div>
+      </div>
       <div class="song-content-footer">
+        <div class="song-footer-rigth">
+          @if(count($song->comments) > 0)
+            <a href="" class="see-all-comments-icon" data-toggle="modal" data-target="#modalSeeCommentsSong{{$song->id}}">
+               <span class="fa fa-comment"></span>
+               1
+            </a>
+            @component('songs.modal-song-comments', ['song' => $song, 'comments' => $song->comments])
+            @endcomponent
+          @endif
+        </div>
       </div>
     </div>
   </div>

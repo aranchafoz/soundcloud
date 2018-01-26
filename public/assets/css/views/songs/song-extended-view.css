@@ -135,14 +135,91 @@
   }
 }
 
+/* Waveform */
 .song-content-waveform {
   height: 60px;
   position: relative;
 }
 
+/* Comment */
+.song-content-comment {
+  margin-top: 22px;
+  opacity: 1;
+  position: relative;
+  z-index: 3;
+}
+
+.song-content-commentWrapper {
+  height: 30px;
+  overflow: visible;
+  padding: 5px;
+  background: #f2f2f2;
+  border: 1px solid #e5e5e5;
+  display: flex;
+  align-items: center;
+}
+
+.song-content-comment-avatar {
+  width: 20px;
+  height: 20px;
+  margin-right: 0;
+  position: relative;
+  float: left;
+}
+
+.song-content-comment-avatar > .song-comment-user-image {
+  width: 20px;
+  height: 20px;
+  display: block;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.song-content-comment-input {
+  position: relative;
+  font-size: 12px;
+  line-height: 16px;
+  box-sizing: border-box;
+  flex-grow: 1;
+}
+
+.song-comment-input {
+  box-sizing: border-box;
+  width: 100%;
+  background: #fff;
+  padding: 0 9px;
+  font-size: 12px;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #e5e5e5;
+  font-family: inherit;
+  color: #333;
+  margin: 0;
+}
+
+/* Footer */
 .song-content-footer {
   position: relative;
   margin-top: 10px;
   min-height: 30px;
   box-sizing: border-box;
+}
+
+.song-footer-rigth {
+  position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 0;
+}
+
+.see-all-comments-icon {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 0;
+  padding-right: 0;
+  color: #999;
+  font-size: 11px;
+  line-height: 12px;
+  display: inline-block;
+  font-family: "InterstateSound Tnum","Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 }
