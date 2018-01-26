@@ -18,7 +18,7 @@
             <div class="profile-photo">
               <img class="profile-image" @if($user->profile_photo) src="{{\Storage::url($user->profile_photo)}}"
               @else src="{{URL::asset('images/profile-default.png')}}" @endif>
-              <button class="btn btn-xs btn-default upload-profile-photo-button" data-toggle="modal" data-target="#editProfilePicModal">
+              <button class="btn btn-xs btn-default upload-profile-photo-button" data-toggle="modal" data-target="#editPlaylistPicModal">
                 <i class="fa fa-camera"></i>Actualizar imagen</button>
             </div>
           </div>
@@ -99,8 +99,9 @@
               @if (count($user->playlists) == 0) <h5>No hay elementos que mostrar</h5> @endif
               <ul class="user-media-list">
                 @foreach($user->playlists as $playlist)
-                  <li>
-                      <h4>{{$playlist->name}}</h4>
+                  <li class="playlist-item-profile">
+                      @component('playlist.component-user-playlist', ['playlist' => $playlist])
+                      @endcomponent
                   </li>
                 @endforeach
               </ul>
