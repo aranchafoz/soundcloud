@@ -4,6 +4,7 @@
     @parent
     <link href="{{ asset('assets/css/views/profile.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/views/songs/song-player.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/views/playlists/component-playlist.css') }}" rel="stylesheet">
 @stop
 
 @section('content')
@@ -56,9 +57,10 @@
               <li class="compactTrackList__item">
                 <div class="compactTrackListItem">
                   <div class="compactTrackListItem__image">
-                    {{--<span @if($songPlaylist->song->image) style="background-image: url({{\Storage::url($songPlaylist->song->image)}})"
-                    @else style="background-image: url({{URL::asset('images/profile-default.png')}})" @endif ></span>--}}
-                      <img class="sc-artwork" src="{{URL::asset('images/profile-default.png')}}"></img>
+                      <img class="sc-artwork" @if($playlist->songs[$i]->song->image) src="{{\Storage::url($playlist->songs[$i]->song->image)}}"
+                      @else
+                        src="{{URL::asset('images/profile-default.png')}}"
+                      @endif></img>
                       <span class="compactTrackListItem__number">{{$i+1}}</span>
                       <div class="compactTrackListItem__content sc-truncate">
                         <span class="compactTrackListItem__trackTitle">
