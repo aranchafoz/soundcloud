@@ -55,7 +55,7 @@
               <a data-toggle="modal" data-target="#registerModal" href="#">Crea tu cuenta</a>
             </li>
             <li id="subir-guest" class="myNavbar-items">
-              <a href="{{ route('login') }}">Subir</a>
+              <a data-toggle="modal" data-target="#loginModal" href="#">Subir</a>
             </li>
         @else
             <li id="hazte-pro" class="myNavbar-items">

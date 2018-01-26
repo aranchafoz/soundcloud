@@ -15,6 +15,6 @@ class SearchController extends Controller
     $playlists = Playlist::searchByFilter($filter);
 
     // TODO: Put view here!
-    return view(null, compact('songs', 'playlists'));
+    return view('search.search', compact('filter', 'songs', 'playlists'));
   }
 }

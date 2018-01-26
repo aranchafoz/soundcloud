@@ -16,7 +16,7 @@
           </div>
           <div class="titleContainer-usernameTitle">
             <div class="username">
-              <a>{{ $user->name }}</a>
+              <a>{{ $song->user->name }}</a>
             </div>
             <a>{{ $song->name }}</a>
           </div>
