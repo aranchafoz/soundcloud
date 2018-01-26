@@ -221,7 +221,7 @@ class SongController extends Controller
   * @param $request http petition with form inputs
   * @param $songId id of the song
   */
-  public function createComment(Request $request, $songId) {
+  public function createComment(Request $request, $userId, $songId) {
     $song = Song::find($songId);
     if (!$song) return abort(404);
 
@@ -232,11 +232,11 @@ class SongController extends Controller
     $comment = new Comment;
     $comment->content = $request->input('content');
     $comment->song_id = $songId;
-    $comment->user_id = Auth::user()->id;
+    $comment->user_id = $userId;
 
     if ($comment->save()) {
       // Success
-      return redirect()->back();
+      return redirect()->route('home');
 
     } else {
       return abort(500);

@@ -41,15 +41,19 @@
       </div>
       @if(Auth::user())
       <div class="song-content-comment">
+
+        {!! Form::open(['action' => ['SongController@createComment', Auth::user()->id, $song->id], 'method' => 'post']) !!}
+        {!! Form::token() !!}
         <div class="song-content-commentWrapper">
           <div class="song-content-comment-avatar">
             <img class="song-comment-user-image" @if(Auth::user()->image) src="{{\Storage::url(Auth::user()->image)}}"
             @else src="{{URL::asset('images/profile-default.png')}}" @endif>
           </div>
           <div class="song-content-comment-input">
-            <input type="text" class="song-comment-input" title="Escribe un comentario" placeholder="Escribe un comentario">
+            {{ Form::text('content', null, ['class' => 'song-comment-input', 'required' => 'true', 'title' => 'Escribe un comentario', 'placeholder' => 'Escribe un comentario']) }}
           </div>
         </div>
+        {!! Form::close() !!}
       </div>
       @endif
       <div class="song-content-footer">
@@ -57,13 +61,14 @@
           @if(count($song->comments) > 0)
             <a href="" class="see-all-comments-icon" data-toggle="modal" data-target="#modalSeeCommentsSong{{$song->id}}">
                <span class="fa fa-comment"></span>
-               1
+               {{count($song->comments)}}
             </a>
-            @component('songs.modal-song-comments', ['song' => $song, 'comments' => $song->comments])
-            @endcomponent
           @endif
         </div>
       </div>
     </div>
   </div>
+
+  @component('songs.modal-song-comments', ['song' => $song, 'comments' => $song->comments])
+  @endcomponent
 </div>

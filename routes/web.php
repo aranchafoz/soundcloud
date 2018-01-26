@@ -39,6 +39,9 @@ Route::group(['middleware' => 'auth'], function() {
   Route::put('user/{userId}/songs/{songId}/pic_edit', 'SongController@putEditPicSong');
   Route::delete('user/{userId}/songs/{songId}', 'SongController@deleteUserSong');
 
+  // Comments
+  Route::post('user/{userId}/songs/{songId}/comments', 'SongController@createComment');
+
   // Playlist
   Route::get('/playlists/{id}', 'PlaylistController@getPlaylist');
   Route::post('user/{userId}/songs/{songId}/playlist', 'PlaylistController@createPlaylistFromModal');

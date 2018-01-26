@@ -3,7 +3,7 @@
 @section('styles')
     @parent
     <link href="{{ asset('assets/css/views/songs/index.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/views/songs/song-player.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/views/songs/song-extended-view.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/views/songs/modal-delete-song.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/views/components/modal-nav-tabs.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/views/songs/song-form.css') }}" rel="stylesheet">
